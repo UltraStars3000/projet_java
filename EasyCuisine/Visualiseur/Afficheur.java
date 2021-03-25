@@ -33,7 +33,7 @@ public class Afficheur extends Application{
         root.setHgap(10);  
         root.setPrefWrapLength(250);
         TextField texte = new TextField();
-        FileInputStream input = new FileInputStream("/home/natmani/Téléchargements/home2.png");  
+        FileInputStream input = new FileInputStream("ressources/images/home.png");  
         Image home = new Image(input);
         ImageView logo = new ImageView(home);
         logo.setFitHeight(30);
