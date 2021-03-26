@@ -9,37 +9,32 @@ public class Dico {
 	//to change Map<class<nom, filtre, ... >, String>
 	//Recette extends Map<String, >
 	/*
-	 * Recette : NomRecette, ingrediant, 
+	 * Recette : NomRecette, ingredient, 
 	 * 			 description de recette, 
 	 * 			 protocol de preparation (tuto),
 	 * 			 image
 	 * 
+	 * 
+	 * 
+	 * DicoRecette   --> Ensemble --> Recette
+	 * DicoIngredient -->
+	 * 
+	 * patate, recette1, recette2
+	 * 
+	 * 
 	 */
 	
 	
-	private Map<String, String> map;
+	private Map<String, Set<Recette>> mapRecette; // NomRecette
+	private Map<String, Set<Recette>> mapIgredient; //Ingredient
 	
 	public Dico() {
-		map = new HashMap<String, String>();	
+		mapRecette = new HashMap<>();
+		mapIgredient = new HashMap<>();
 	}
 	
-	
-	public void ajouteRecette(String cle, String recette) {
-		this.map.put(cle, recette);
-	}
-
-	public void supprimmerRecette(String cle) {
-		this.map.remove(cle);
-	}
-	
-	public void modifierRecette(String cle, String recette) {
+	public static void main(String[] args) {
 		
-		//to change
-		this.map.replace(cle, recette);
 	}
 	
-	
-	public Set<String> getCle() {
-		return this.map.keySet();
-	}
 }
