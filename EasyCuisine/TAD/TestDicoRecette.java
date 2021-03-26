@@ -20,9 +20,33 @@ public class TestDicoRecette {
 
 	@Test
 	public void AjouterRecette() {
-		r = new Recette("Brioche moelleuse aux pépites de chocolat", "Brioche moelleuse aux pépites de chocolat", ingredient0, preparation0);
+		r = new Recette("Brioche moelleuse aux pépites de chocolat", "Brioche moelleuse aux pépites de chocolat",
+				ingredient0, preparation0);
 		System.out.println(r.toString());
+		System.out.println();
 	}
+
+	@Test
+	public void AjouterRecetteDico() {
+		r = new Recette("Brioche moelleuse aux pépites de chocolat", "Brioche moelleuse aux pépites de chocolat",
+				ingredient0, preparation0);
+		d.put("Brioche moelleuse aux pépites de chocolat", r);
+		System.out.println(d.get("Brioche moelleuse aux pépites de chocolat"));
+	}
+
+	private String[] ingredient1 = { "1 Ananas", "2 oeufs" };
+	private String[] preparation1 = { "Etape 1: Disposer les biscuits au fond d'un plat carré ou rectangulaire.",
+			"Etape 2: Mettre par dessus l'ananas coupé en petits morceaux, et verser un peu de jus d'ananas sur le tout (3 à 4 cuillères à soupe)." };
+	
+	@Test
+	public void AjouterRecetteDico2() {
+		r = new Recette("Tiramisu à l'ananas", "Tiramisu à l'ananas", ingredient1, preparation1);
+		d.put("Tiramisu à l'ananas", r);
+		
+		System.out.println(d.get("Tiramisu à l'ananas"));
+		System.out.println(d.get("Brioche moelleuse aux pépites de chocolat"));
+	}
+
 	/*
 	 * @Test public void rechercherRecette() throws Exception {
 	 * d.ajouteRecette("Patate", r); System.out.println(d.getRecette("Patate")); }

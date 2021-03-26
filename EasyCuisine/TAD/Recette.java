@@ -31,19 +31,31 @@ public class Recette {
 			this.etapePreparation.add(preparation[i]);
 		}
 	}
-
+	
+	/**
+	 * 
+	 * @return nomRecette: nom de la recette
+	 */
 	public String getNomRecette() {
-		return nomRecette;
+		return nomRecette + "\n";
 	}
-
+	
+	/**
+	 * 
+	 * @return descriptionRecette: Description de la recette
+	 */
 	public String getDescriptionRecette() {
-		return descriptionRecette;
+		return descriptionRecette +"\n";
 	}
-
+	
+	/**
+	 * 
+	 * @return s: Liste des ingredients
+	 */
 	public String getIngredient() {
 		String s = "";
 		for (int i = 0; i < listIngredient.size(); i++) {
-			s += listIngredient.get(i) + " ";
+			s += listIngredient.get(i) + "\n ";
 		}
 
 		return s;
@@ -51,23 +63,23 @@ public class Recette {
 
 	/**
 	 * 
-	 * @return
+	 * @return s: Liste des étapes de la recette
 	 */
 	public String getPreparation() {
 		String s = "";
 		for (int i = 0; i < etapePreparation.size(); i++) {
-			s += etapePreparation.get(i) + " ";
+			s += etapePreparation.get(i) + "\n ";
 		}
 		return s;
 	}
-
+	
 	/**
 	 * 
 	 */
 	public String toString() {
 		String s = "";
-		s += getNomRecette() + "\nDescription:\n -" + getDescriptionRecette() + "\nIngrediant requis:\n -"
-				+ getIngredient() + "\nPreparation:\n -" + getPreparation();
+		s += getNomRecette() + "\nDescription:\n -" + getDescriptionRecette() + "\nIngrediant requis:\n "
+				+ getIngredient() + "\nPreparation:\n " + getPreparation();
 
 		return s;
 	}
