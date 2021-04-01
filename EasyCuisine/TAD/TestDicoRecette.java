@@ -8,7 +8,9 @@ public class TestDicoRecette {
 	Recette r;
 	Dico d;
 
-	private String[] ingredient0 = { "1 sachet pépites de chocolas", "500g farine" };
+	private Ingredient[] ingredient0 = {
+			new Ingredient("Pépites de chocolas", 1, "sachet"),
+			new Ingredient("Farine", 500, "g")};
 	private String[] preparation0 = {
 			"Etape 1: Délayez la levure dans deux cuillerées à soupe d'eau tiède puis ajoutez le restant d'eau.",
 			"Etape 2: Versez la farine et le sel dans un saladier, ajoutez le lait puis la levure délayée dans l'eau. Pétrissez énergiquement la pâte pendant 5 minutes (utilisez un robot si vous en possédez un)." };
@@ -34,7 +36,9 @@ public class TestDicoRecette {
 		System.out.println(d.get("Brioche moelleuse aux pépites de chocolat"));
 	}
 
-	private String[] ingredient1 = { "1 Ananas", "2 oeufs" };
+	private Ingredient[] ingredient1 = {
+			new Ingredient("Ananas", 1, "u"),
+			new Ingredient("Oeufs", 2, "u")};
 	private String[] preparation1 = { "Etape 1: Disposer les biscuits au fond d'un plat carré ou rectangulaire.",
 			"Etape 2: Mettre par dessus l'ananas coupé en petits morceaux, et verser un peu de jus d'ananas sur le tout (3 à 4 cuillères à soupe)." };
 	

@@ -7,7 +7,7 @@ public class Recette {
 
 	private String nomRecette;
 	private String descriptionRecette;
-	List<String> listIngredient = new ArrayList<>();
+	List<Ingredient> listIngredient = new ArrayList<>();
 	List<String> etapePreparation = new ArrayList<>();
 	// private Image img;
 
@@ -16,11 +16,11 @@ public class Recette {
 	 * 
 	 * @param recette
 	 * @param description
-	 * @param ingredient:  tableau (string) d'ingredient requis pour la recette
+	 * @param ingredient:  tableau (ingredient) d'ingredient requis pour la recette
 	 * @param preparation: tableau (string) d'ingredient requis pour les étapes de
 	 *                     préparation de la recette
 	 */
-	public Recette(String recette, String description, String[] ingredient, String[] preparation) {
+	public Recette(String recette, String description, Ingredient[] ingredient, String[] preparation) {
 		this.nomRecette = recette;
 		this.descriptionRecette = description;
 		
@@ -55,7 +55,8 @@ public class Recette {
 	public String getIngredient() {
 		String s = "";
 		for (int i = 0; i < listIngredient.size(); i++) {
-			s += listIngredient.get(i) + "\n ";
+			Ingredient c = listIngredient.get(i);
+			s += c.getNomIngredient() + ": " + c.getQuantiteIngredient() + c.getUniteIngredient() + "\n ";
 		}
 
 		return s;
