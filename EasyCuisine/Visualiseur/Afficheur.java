@@ -20,7 +20,7 @@ public class Afficheur extends Application{
         System.out.println( "Main method inside Thread : " +  Thread.currentThread().getName());
         launch(args);
     }
-
+	
 	@Override
 	public void start(Stage stage) throws Exception {
 		
@@ -44,8 +44,11 @@ public class Afficheur extends Application{
         Button filtres = new Button("Filtres");
         Button ajouter = new Button("Ajouter une recette");
         
+        Group acc = new Group();
+        acc.getChildren().addAll(accueil,texte,recherche,filtres);
+        
         filtres.setOnAction(new EventHandler<ActionEvent>() {  
-            @Override  
+            @Override
             public void handle(ActionEvent arg0) {
             	Stage filtre = new Stage();
             	FlowPane box = new FlowPane(); 
@@ -69,14 +72,9 @@ public class Afficheur extends Application{
         ajouter.setOnAction(new EventHandler<ActionEvent>()  {  
             @Override  
             public void handle(ActionEvent arg0) {
-            	Stage ajout = new Stage();
-            	FlowPane box2 = new FlowPane();
-            	Scene scene2 = new Scene(box2);
-            	ajout.setWidth(600);
-            	ajout.setHeight(360);
-            	box2.setVgap(6);
-            	box2.setHgap(10);
-            	ajout.setTitle("Ajouter une recette");
+            	root.getChildren().clear();
+            	stage.setWidth(600);
+                stage.setHeight(360);
             	Label t = new Label("Nom de la recette : ");
             	TextField titre = new TextField();
             	Button img = new Button("Image");
@@ -95,22 +93,34 @@ public class Afficheur extends Application{
                 logo2.setFitHeight(30);
                 logo2.setFitWidth(30);
                  
-                box2.getChildren().addAll(t,titre,img);
-                box2.getChildren().add(p);
-                box2.getChildren().addAll(r,prep,logo2);
-                
-                ajout.setScene(scene2);
-                ajout.show();   
+                root.getChildren().add(acc);
+                root.getChildren().addAll(t,titre,img);
+                root.getChildren().add(p);
+                root.getChildren().addAll(r,prep,logo2);
+                stage.show();   
             }  
         });
         
+        accueil.setOnAction(new EventHandler<ActionEvent>()  {  
+            @Override
+            public void handle(ActionEvent arg0) {
+            	try {
+					restart(stage);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+            }
+        });
         
-        root.getChildren().addAll(accueil,texte,recherche,filtres,ajouter); 
-        
+        root.getChildren().addAll(acc,ajouter); 
         stage.setScene(scene);
-
         stage.show();
     }
+	
+	void restart(Stage stage) throws Exception {
+	    start(stage);
+	}
 }
 
 
