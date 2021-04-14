@@ -50,22 +50,22 @@ public class Afficheur extends Application{
         filtres.setOnAction(new EventHandler<ActionEvent>() {  
             @Override
             public void handle(ActionEvent arg0) {
-            	Stage filtre = new Stage();
-            	FlowPane box = new FlowPane(); 
-            	Scene scene2 = new Scene(box);
-            	filtre.setWidth(600);
-            	filtre.setHeight(360);
-            	filtre.setTitle("Filtres");
+            	root.getChildren().clear();
+            	stage.setWidth(600);
+                stage.setHeight(360);
+                stage.setTitle("Filtres");
+                Region p = new Region();
+            	p.setPrefSize(Double.MAX_VALUE, 0.0);
             	Label categories = new Label("Catégories :");
                 CheckBox c1 = new CheckBox("Entrées");  
                 CheckBox c2 = new CheckBox("Plats");  
                 CheckBox c3 = new CheckBox("Desserts");  
                 CheckBox c4 = new CheckBox("Appéritifs");  
                  
-                box.getChildren().addAll(categories,c1,c2,c3,c4);  
-                
-                filtre.setScene(scene2);
-            	filtre.show();
+                root.getChildren().add(acc); 
+                root.getChildren().add(p);
+                root.getChildren().addAll(categories,c1,c2,c3,c4);
+            	stage.show();
             }  
         });
         
@@ -78,6 +78,8 @@ public class Afficheur extends Application{
             	Label t = new Label("Nom de la recette : ");
             	TextField titre = new TextField();
             	Button img = new Button("Image");
+            	Button ajouter = new Button("Ajouter recette");
+            	Button plus = new Button("+");
             	Label r = new Label("Etape 1 : ");
             	TextField prep = new TextField();
             	Region p = new Region();
@@ -97,7 +99,31 @@ public class Afficheur extends Application{
                 root.getChildren().addAll(t,titre,img);
                 root.getChildren().add(p);
                 root.getChildren().addAll(r,prep,logo2);
-                stage.show();   
+                root.getChildren().add(p);
+                root.getChildren().add(ajouter);
+                stage.show();  
+                
+                ajouter.setOnAction(new EventHandler<ActionEvent>()  {  
+                    @Override
+                    public void handle(ActionEvent arg0) {
+                    	try {
+        					restart(stage);
+        				} catch (Exception e) {
+        					e.printStackTrace();
+        				}
+                    }
+                });
+                
+                plus.setOnAction(new EventHandler<ActionEvent>()  {  
+                    @Override
+                    public void handle(ActionEvent arg0) {
+                    	try {
+        					restart(stage);
+        				} catch (Exception e) {
+        					e.printStackTrace();
+        				}
+                    }
+                });
             }  
         });
         
@@ -107,7 +133,6 @@ public class Afficheur extends Application{
             	try {
 					restart(stage);
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
             }
