@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import TAD.Ingredient;
 import TAD.Recette;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +14,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -31,7 +33,11 @@ public class Controleur implements Initializable {
 	// fx:controler=""
 	@FXML private Button buttonAnnulerRecette;
 	@FXML private Button buttonAjouterRecette;
+	//ajout recette
 	@FXML private TextField textFieldNomRecette;
+	@FXML private TextField textFieldPrep;
+	@FXML private TextArea textAreaIngre;
+	@FXML private TextArea textAreaEtape;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -86,13 +92,38 @@ public class Controleur implements Initializable {
 	 * Ajoute la recette dans le dico
 	 * 
 	 * @param e
+	 * @throws Exception 
 	 */
-	public void AjouterRecette(ActionEvent e) {
+	public void AjouterRecette(ActionEvent e) throws Exception {
 		// to do
-		if(textFieldNomRecette.getText() != null) {
-			//controle si le champ et vide ou non: si non --> erreur
+		String nomRecette = textFieldNomRecette.getText();
+		String preparation = textFieldPrep.getText();
+		String ingrediant = textAreaIngre.getText();
+		String etape = textAreaEtape.getText();
+		
+		//controle si le champ et vide ou non: sinon --> erreur
+		if(nomRecette.isBlank()) {
+			throw new Exception("Nom de la recette non donnée");
+		} else if (preparation.isBlank()) {
+			throw new Exception("Temps de preparation de la recette non donnée");
+		} else if (ingrediant.isBlank()) {
+			throw new Exception("Ingrediant de la recette non donnée");
+		} else if (etape.isBlank()) {
+			throw new Exception("Etape de preparation de la recette non donnée");
 		}
-		Recette r = new Recette(textFieldNomRecette.getText(), null, null, null);
+		
+		//sinon on ajoute la recette
+		// A revoir 
+		/*Ingredient i = new Ingredient(nomIngrediant, 0, quant);
+		
+		String[] tabIngrediant;
+		for (String s : ingrediant.split("\n")) {
+			tabIngrediant.
+		}
+		
+		
+		Recette r = new Recette(nomRecette, preparation, ingrediant, etape);*/
+		
 		//
 		// revois sur la fenête principale sinon sur un autre scene avec un validation
 		// puis retour sur la scene pricipale
