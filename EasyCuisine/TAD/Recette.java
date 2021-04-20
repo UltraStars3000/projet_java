@@ -1,10 +1,10 @@
 package TAD;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Recette {
-
+	
 	private String nomRecette;
 	private String descriptionRecette;
 	List<Ingredient> listIngredient = new ArrayList<>();
