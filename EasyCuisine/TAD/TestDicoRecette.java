@@ -8,9 +8,10 @@ public class TestDicoRecette {
 	Recette r;
 	Dico d;
 
-	private Ingredient[] ingredient0 = {
-			new Ingredient("Pépites de chocolas", 1, "sachet"),
-			new Ingredient("Farine", 500, "g")};
+	/*
+	private List<String> ingredient0 = {
+			new Ingredient("Pépites de chocolas", "1", "sachet"),
+			new Ingredient("Farine", "500", "g")};
 	private String[] preparation0 = {
 			"Etape 1: Délayez la levure dans deux cuillerées à soupe d'eau tiède puis ajoutez le restant d'eau.",
 			"Etape 2: Versez la farine et le sel dans un saladier, ajoutez le lait puis la levure délayée dans l'eau. Pétrissez énergiquement la pâte pendant 5 minutes (utilisez un robot si vous en possédez un)." };
@@ -50,7 +51,7 @@ public class TestDicoRecette {
 		System.out.println(d.get("Tiramisu à l'ananas"));
 		System.out.println(d.get("Brioche moelleuse aux pépites de chocolat"));
 	}
-
+	*/
 	/*
 	 * @Test public void rechercherRecette() throws Exception {
 	 * d.ajouteRecette("Patate", r); System.out.println(d.getRecette("Patate")); }

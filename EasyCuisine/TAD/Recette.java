@@ -6,7 +6,7 @@ import java.util.List;
 public class Recette {
 	
 	private String nomRecette;
-	private String descriptionRecette;
+	private String tempsPreparation;
 	List<Ingredient> listIngredient = new ArrayList<>();
 	List<String> etapePreparation = new ArrayList<>();
 	// private Image img;
@@ -20,15 +20,15 @@ public class Recette {
 	 * @param preparation: tableau (string) d'ingredient requis pour les étapes de
 	 *                     préparation de la recette
 	 */
-	public Recette(String recette, String description, Ingredient[] ingredient, String[] preparation) {
+	public Recette(String recette, String tempsPrep, List<?> ingredient, List<?> preparation) {
 		this.nomRecette = recette;
-		this.descriptionRecette = description;
+		this.tempsPreparation = tempsPrep;
 		
-		for (int i = 0; i < ingredient.length; i++) {
-			this.listIngredient.add(ingredient[i]);
+		for (int i = 0; i < ingredient.size(); i++) {
+			this.listIngredient.add((Ingredient) ingredient.get(i));
 		}
-		for (int i = 0; i < preparation.length; i++) {
-			this.etapePreparation.add(preparation[i]);
+		for (int i = 0; i < preparation.size(); i++) {
+			this.etapePreparation.add((String) preparation.get(i));
 		}
 	}
 	
@@ -42,10 +42,10 @@ public class Recette {
 	
 	/**
 	 * 
-	 * @return descriptionRecette: Description de la recette
+	 * @return tempsPreparation: Description de la recette
 	 */
-	public String getDescriptionRecette() {
-		return descriptionRecette +"\n";
+	public String getTempsPreparation() {
+		return tempsPreparation +"\n";
 	}
 	
 	/**
@@ -79,7 +79,7 @@ public class Recette {
 	 */
 	public String toString() {
 		String s = "";
-		s += getNomRecette() + "\nDescription:\n -" + getDescriptionRecette() + "\nIngrediant requis:\n "
+		s += getNomRecette() + "\nTemps de préparation:\n " + getTempsPreparation() + "\nIngrediant requis:\n "
 				+ getIngredient() + "\nPreparation:\n " + getPreparation();
 
 		return s;

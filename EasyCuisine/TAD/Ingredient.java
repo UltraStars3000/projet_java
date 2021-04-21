@@ -2,11 +2,14 @@ package TAD;
 
 public class Ingredient {
 
-	private int quantite;
+	
+	
+	private String quantite;
 	private String nomIngredient;
 	private String unite;
 	
-	public Ingredient(String nomIngredient, int quantite, String unite) {
+	
+	public Ingredient(String nomIngredient, String quantite, String unite) {
 		this.quantite = quantite;
 		this.nomIngredient = nomIngredient;
 		this.unite = unite;
@@ -16,7 +19,7 @@ public class Ingredient {
 		return nomIngredient;
 	}
 	
-	public int getQuantiteIngredient() {
+	public String getQuantiteIngredient() {
 		return quantite;
 	}
 	
@@ -25,6 +28,8 @@ public class Ingredient {
 	}
 	
 	public String toString() {
-		return getNomIngredient() + "Quantité:\n" + getQuantiteIngredient() + getUniteIngredient();
+		return "Quantité de "+ getNomIngredient() + " :\n" + getQuantiteIngredient() + getUniteIngredient();
 	}
+	
+
 }
