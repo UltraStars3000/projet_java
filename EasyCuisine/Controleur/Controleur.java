@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import Modele.Modele;
 import TAD.Ingredient;
 import TAD.Recette;
 import javafx.event.ActionEvent;
@@ -22,10 +23,8 @@ import javafx.stage.Stage;
 
 public class Controleur implements Initializable {
 	
-	private String[] typeUnite = {"g", "gramme", "litre", "c. à soupe", "cuillère à soupe", "c. à café", "cuillère à café", "pincée"};
-	
-	
-	
+
+	Modele mold = new Modele();
 	Scene scene;
 
 	// Button de la VueRecette
@@ -44,10 +43,11 @@ public class Controleur implements Initializable {
 	@FXML private TextField textFieldPrep;
 	@FXML private TextArea textAreaIngre;
 	@FXML private TextArea textAreaEtape;
-
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+		
 	}
 
 	/*
@@ -104,9 +104,11 @@ public class Controleur implements Initializable {
 				
 		String nomRecette = textFieldNomRecette.getText();
 		String preparation = textFieldPrep.getText();
+		String ingrediant = textAreaIngre.getText();
+		String etape = textAreaEtape.getText();
 		
 		//controle si le champ et vide ou non: sinon --> erreur
-		/*if(nomRecette.isBlank()) {
+		if(nomRecette.isBlank()) {
 			throw new Exception("Nom de la recette non donnée");
 		} else if (preparation.isBlank()) {
 			throw new Exception("Temps de preparation de la recette non donnée");
@@ -114,82 +116,19 @@ public class Controleur implements Initializable {
 			throw new Exception("Ingrediant de la recette non donnée");
 		} else if (etape.isBlank()) {
 			throw new Exception("Etape de preparation de la recette non donnée");
-		}*/
-		
-		//flemme
-		String ingrediant = textAreaIngre.getText();
-		List<Ingredient> listIngr = new ArrayList<Ingredient>();
-		Ingredient ingr;
-		String quant = "";
-		String nomI = "";
-		String unit = "";
-		
-		for (String s : ingrediant.split("\n")) {
-			for (String s2 : s.split(" ")) {
-				//test quantité
-				if(isNumeric(s2)) {
-					quant = s2;
-				} else if (s2.contains("\\")) {
-					quant = s2;
-					//System.out.println(s2);
-				} else if (isUnite(s2)) {
-					unit = s2;
-				} else if(!(isNumeric(s2) && s2.contains("\\") && isUnite(s2))){
-					nomI += s2 + " ";
-				}
-			}
-			//System.out.println("here :" + nomI.substring(3, nomI.length()-1));
-			ingr = new Ingredient(nomI.substring(3, nomI.length()-1), quant, unit);
-			listIngr.add(ingr);
 		}
 		
-		//Recuperation des etapes
-		String etape = textAreaEtape.getText();
-		List<String> listEtape = new ArrayList<String>();
-		for (String s : etape.split("\n")) {
-			listEtape.add(s);
-		}
-				
-		Recette r = new Recette(nomRecette, preparation, listIngr, listEtape);
-		System.out.println(r.toString());
+		
+		
+		System.out.println(nomRecette + preparation + ingrediant + etape);
+		
+		this.mold.ajouteRecette(nomRecette, preparation, ingrediant, etape);
+		
+		//System.out.println(r.toString());
 		//mettre dans le dico
 		// revois sur la fenête principale sinon sur un autre scene avec un validation
 		// puis retour sur la scene pricipale
 	}
-	
-	
-	
-	/**
-	 * A mettre dans un autre class
-	 * @param string
-	 * @return
-	 */
-	public static boolean isNumeric(String string) {
-	    @SuppressWarnings("unused")
-		int intValue;
-	    
-	    if(string == null || string.equals("")) {
-	        return false;
-	    }
-	    
-	    try {
-	        intValue = Integer.parseInt(string);
-	        return true;
-	    } catch (NumberFormatException e) {}
-	    return false;
-	}
-	
-	/**
-	 * idem
-	 * @param s
-	 * @return
-	 */
-	public boolean isUnite(String s) {
-		for (int i = 0; i < typeUnite.length; i++) {
-			if(s.equals(typeUnite[i])) {
-				return true;
-			}
-		}	
-		return false;
-	}
+
+
 }

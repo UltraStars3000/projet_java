@@ -1,9 +1,11 @@
 package TAD;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-public class Recette {
+public class Recette extends HashMap<String, Recette> {
+	private static final long serialVersionUID = 1L;
 	
 	private String nomRecette;
 	private String tempsPreparation;
