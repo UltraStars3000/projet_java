@@ -1,5 +1,6 @@
 package TAD;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,6 +12,7 @@ public class Recette extends HashMap<String, Recette> {
 	private String tempsPreparation;
 	List<Ingredient> listIngredient = new ArrayList<>();
 	List<String> etapePreparation = new ArrayList<>();
+	private File imagePath;
 	// private Image img;
 
 	/**
@@ -22,9 +24,10 @@ public class Recette extends HashMap<String, Recette> {
 	 * @param preparation: tableau (string) d'ingredient requis pour les étapes de
 	 *                     préparation de la recette
 	 */
-	public Recette(String recette, String tempsPrep, List<?> ingredient, List<?> preparation) {
+	public Recette(String recette, String tempsPrep, List<?> ingredient, List<?> preparation, String pathImage) {
 		this.nomRecette = recette;
 		this.tempsPreparation = tempsPrep;
+		this.imagePath = new File(pathImage);
 		
 		for (int i = 0; i < ingredient.size(); i++) {
 			this.listIngredient.add((Ingredient) ingredient.get(i));
@@ -75,6 +78,11 @@ public class Recette extends HashMap<String, Recette> {
 		}
 		return s;
 	}
+	
+	public String getPathImage() {
+		return imagePath.getAbsolutePath();
+	}
+	
 	
 	/**
 	 * 

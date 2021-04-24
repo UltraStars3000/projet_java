@@ -1,14 +1,12 @@
 package Controleur;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
+
 import Modele.Modele;
-import TAD.Ingredient;
-import TAD.Recette;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +17,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
 public class Controleur implements Initializable {
@@ -43,17 +43,14 @@ public class Controleur implements Initializable {
 	@FXML private TextField textFieldPrep;
 	@FXML private TextArea textAreaIngre;
 	@FXML private TextArea textAreaEtape;
+	@FXML private Button btnAjouterImage;
+	@FXML private TextField afficherPathImage;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		
 	}
-
-	/*
-	 * public void ShowText(ActionEvent e) {
-	 * barreDeRecherche.appendText("Bonjours petit"); }
-	 */
 
 	/**
 	 * Quand cette method est appeler, la scene changeras pour la scene ajouter une
@@ -106,9 +103,11 @@ public class Controleur implements Initializable {
 		String preparation = textFieldPrep.getText();
 		String ingrediant = textAreaIngre.getText();
 		String etape = textAreaEtape.getText();
+		String pathImage = afficherPathImage.getText();
 		
 		//controle si le champ et vide ou non: sinon --> erreur
-		if(nomRecette.isBlank()) {
+		if(nomRecette.isBlank()) 
+		{
 			throw new Exception("Nom de la recette non donnée");
 		} else if (preparation.isBlank()) {
 			throw new Exception("Temps de preparation de la recette non donnée");
@@ -116,19 +115,31 @@ public class Controleur implements Initializable {
 			throw new Exception("Ingrediant de la recette non donnée");
 		} else if (etape.isBlank()) {
 			throw new Exception("Etape de preparation de la recette non donnée");
+		} else if (pathImage.isBlank()) {
+			//alerte box ou a suppr
+			//to do add : black image "Aucune image"
 		}
 		
+		//System.out.println(nomRecette + preparation + ingrediant + etape);
+		//ajout dans le dico
+		this.mold.ajouteRecette(nomRecette, preparation, ingrediant, etape, pathImage);
+		//copy and paste pathImage in ressource and add it
 		
 		
-		System.out.println(nomRecette + preparation + ingrediant + etape);
 		
-		this.mold.ajouteRecette(nomRecette, preparation, ingrediant, etape);
-		
-		//System.out.println(r.toString());
-		//mettre dans le dico
 		// revois sur la fenête principale sinon sur un autre scene avec un validation
 		// puis retour sur la scene pricipale
 	}
 
-
+	public void selecteImage(ActionEvent e) {
+		//Get Image
+		FileChooser fc = new FileChooser();
+		fc.getExtensionFilters().add(new ExtensionFilter("PNG image", "*.png"));
+		File f = fc.showOpenDialog(null);
+		
+		if (f != null) {
+			afficherPathImage.setText(f.getAbsolutePath());
+		}	
+		
+	}
 }

@@ -51,11 +51,16 @@
                               <Font size="14.0" />
                            </font>
                         </TextArea>
-                        <Label layoutX="14.0" layoutY="287.0" text="Ajouter une image :">
+                        <Button fx:id="btnAjouterImage" layoutX="15.0" layoutY="294.0" mnemonicParsing="false" onAction="#selecteImage" text="Ajouter Image">
                            <font>
                               <Font size="20.0" />
                            </font>
-                        </Label>
+                        </Button>
+                        <TextField fx:id="afficherPathImage" layoutX="16.0" layoutY="346.0" prefHeight="0.0" prefWidth="476.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
                      </children>
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
