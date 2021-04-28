@@ -4,6 +4,7 @@ module CuisineApp {
 	requires junit;
 	requires org.junit.jupiter.api;
 	requires opencv;
+	requires java.desktop;
 
 	//dévlarer tous les packages ici
 	opens Controleur to javafx.graphics, javafx.fxml;

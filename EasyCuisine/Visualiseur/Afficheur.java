@@ -15,7 +15,7 @@ public class Afficheur extends Application {
 
 		Parent root = FXMLLoader.load(getClass().getResource("/Visualiseur/VueRecette.fxml"));
 
-		primaryStage.setTitle("EasyCuisinnes");
+		primaryStage.setTitle("EasyCuisine");
 		primaryStage.setScene(new Scene(root));
 		primaryStage.show();
 

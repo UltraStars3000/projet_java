@@ -1,10 +1,17 @@
 package Modele;
 
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Observable;
 
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
@@ -13,19 +20,21 @@ import org.opencv.imgcodecs.Imgcodecs;
 import TAD.Ingredient;
 import TAD.Recette;
 
-public class Modele {
+public class Modele extends Observable {
 
 	Recette r;
 	Path original;
 	private String[] typeUnite = {"g", "gramme", "litre", "c. à soupe", "cuillère à soupe", "c. à café", "cuillère à café", "pincée"};
-		
+	HashMap<String,Recette> listeRecettes = new HashMap<>();
+	File recetteXML = new File("recettes.xml");
+	
 	public Modele() {
 		
 	}
 	
 	@SuppressWarnings("resource")
-	public void ajouteRecette(String nomR, String tempsPrep, String ingre, String etapePrep, String pathImage) throws IOException {
-		//On sépare la quant, nomI, unit, pour la class Ingrediant
+	public void ajouteRecette(String nomR, String tempsPrep, String ingre, String etapePrep, String pathImage, String typeR) throws IOException {
+		//On sépare la quant, nomI, unit, pour la classe Ingredient
 		List<Ingredient> listIngr = new ArrayList<Ingredient>();
 		Ingredient ingr;
 		String quant = "";
@@ -60,7 +69,8 @@ public class Modele {
 		}
 		
 		//Copy coller dans le rep ressource avec le nouveau path
-		File f = new File(pathImage);
+		String newImagePath = "ressources\\imageRecette\\";
+		/*File f = new File(pathImage);
 		String newImagePath = "ressources\\imageRecette\\" + f.getName();
 		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 		
@@ -73,11 +83,13 @@ public class Modele {
 			//copy the image
 			Imgcodecs.imwrite(newImagePath, matrix);
 		}
-		
+		*/
 		System.out.println("here");
-		r = new Recette(nomR, tempsPrep, listIngr, listEtape, newImagePath);
-		r.put(nomR, r);
-		System.out.println(r.getPathImage());
+		r = new Recette(nomR, tempsPrep, listIngr, listEtape, newImagePath, typeR);
+		
+		this.listeRecettes.put(r.nomRecette,r);
+		System.out.println(listeRecettes);
+		saveRecettes();
 	}
 	
 	////////////Les trucs utile///////////////
@@ -114,4 +126,18 @@ public class Modele {
 		}	
 		return false;
 	}
+	
+	public void saveRecettes() throws java.io.InvalidObjectException, FileNotFoundException {
+        XMLEncoder encoder=null;
+        try {
+            FileOutputStream fos = new FileOutputStream(recetteXML);
+            BufferedOutputStream bos= new BufferedOutputStream(fos);
+            encoder=new XMLEncoder(bos);
+            encoder.writeObject(this.listeRecettes);
+            encoder.flush();
+        }finally {
+            if (encoder != null) encoder.close();
+        }
+    }
+
 }

@@ -45,6 +45,7 @@ public class Controleur implements Initializable {
 	@FXML private TextArea textAreaEtape;
 	@FXML private Button btnAjouterImage;
 	@FXML private TextField afficherPathImage;
+	@FXML private TextField categorieRecette;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -104,33 +105,42 @@ public class Controleur implements Initializable {
 		String ingrediant = textAreaIngre.getText();
 		String etape = textAreaEtape.getText();
 		String pathImage = afficherPathImage.getText();
+		String typeR = categorieRecette.getText();
+		
 		
 		//controle si le champ et vide ou non: sinon --> erreur
 		if(nomRecette.isBlank()) 
 		{
 			throw new Exception("Nom de la recette non donnée");
-		} else if (preparation.isBlank()) {
+		}
+		if (preparation.isBlank()) {
 			throw new Exception("Temps de preparation de la recette non donnée");
-		} else if (ingrediant.isBlank()) {
+		} 
+		if (ingrediant.isBlank()) {
 			throw new Exception("Ingrediant de la recette non donnée");
-		} else if (etape.isBlank()) {
+		} 
+		if (etape.isBlank()) {
 			throw new Exception("Etape de preparation de la recette non donnée");
-		} else if (pathImage.isBlank()) {
+		} 
+		if (pathImage.isBlank()) {
 			//alerte box ou a suppr
 			//to do add : black image "Aucune image"
 		}
-		
+		if (typeR.isBlank()) {
+			throw new Exception("Catégorie manquante");
+		}
 		//System.out.println(nomRecette + preparation + ingrediant + etape);
 		//ajout dans le dico
-		this.mold.ajouteRecette(nomRecette, preparation, ingrediant, etape, pathImage);
+		this.mold.ajouteRecette(nomRecette, preparation, ingrediant, etape, pathImage, typeR);
 		//copy and paste pathImage in ressource and add it
 		
 		
 		
 		// revois sur la fenête principale sinon sur un autre scene avec un validation
 		// puis retour sur la scene pricipale
+		 
+		 
 	}
-
 	public void selecteImage(ActionEvent e) {
 		//Get Image
 		FileChooser fc = new FileChooser();
