@@ -18,8 +18,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Observable;
 
-
-import TAD.Ingredient;
 import TAD.Recette;
 
 public class Modele extends Observable {
@@ -28,7 +26,11 @@ public class Modele extends Observable {
 	Path original;
 	private String[] typeUnite = {"g", "gramme", "litre", "c. à soupe", "cuillère à soupe", "c. à café", "cuillère à café", "pincée"};
 	HashMap<String,Recette> listeRecettes = new HashMap<>();
+	HashMap<String,ArrayList<Recette>> triParCategorie = new HashMap<>();
 	File recetteXML = new File("recettes.xml");
+	ArrayList<Recette> listeEntree=new ArrayList<>();
+	ArrayList<Recette> listePlat=new ArrayList<>();
+	ArrayList<Recette> listeDessert=new ArrayList<>();
 	
 	public Modele() {
 		
@@ -39,11 +41,29 @@ public class Modele extends Observable {
 			FileInputStream fis= new FileInputStream(recetteXML);
 			BufferedInputStream bis= new BufferedInputStream(fis);
 			decoder = new XMLDecoder(bis);
-			ArrayList<Recette> listeEntree=new ArrayList<>();
-			ArrayList<Recette> listePlat=new ArrayList<>();
-			ArrayList<Recette> listeDessert=new ArrayList<>();
+			
 			this.listeRecettes=(HashMap<String, Recette>) decoder.readObject();
 			
+			// On remplit les listes des différentes catégories
+			for(String rec : this.listeRecettes.keySet()){
+				Recette r = this.listeRecettes.get(rec);
+				switch(r.getTypeRC()){
+					case "Entrée":
+						listeEntree.add(r);
+						break;
+					case "Plat":
+						listePlat.add(r);
+						break;
+					case "Dessert":
+						listeDessert.add(r);
+						break;
+					}
+			}
+			// On remplit la HashMap avec les listes de chaque catégories
+			triParCategorie.put("Entrée", listeEntree);
+			triParCategorie.put("Plat", listePlat);
+			triParCategorie.put("Dessert", listeDessert);
+			System.out.println(triParCategorie);
 			
 		}catch(Exception e) {
 			System.out.println("Pas de recette disponible");
@@ -53,37 +73,11 @@ public class Modele extends Observable {
 	}
 
 	public void ajouteRecette(String nomR, String tempsPrep, String ingre, String etapePrep, String pathImage, String typeR) throws IOException {
-		//On sépare la quant, nomI, unit, pour la classe Ingredient
-		ArrayList<Ingredient> listIngr = new ArrayList<Ingredient>();
-		Ingredient ingr;
-		String quant = "";
-		String nomI = "";
-		String unit = "";
-		int cpt=0;
+		//Recuperation des ingrédients
+		ArrayList<String> listIngr = new ArrayList<String>();
 		for (String s : ingre.split("\n")) {
-			for (String s2 : s.split(" ")) {
-
-				if(cpt<2) {
-					cpt+=1;
-				}else {
-					cpt=0;
-				}
-				switch(cpt){
-				case 0:
-					nomI=s2;
-					break;
-				case 1:
-					quant=s2;
-					break;
-				case 2:
-					unit=s2;
-					break;
-				}
+				listIngr.add(s);
 			}
-			ingr = new Ingredient(nomI, unit,quant );
-
-			listIngr.add(ingr);
-		}
 		
 		//Recuperation des etapes
 		ArrayList<String> listEtape = new ArrayList<String>();
@@ -121,7 +115,23 @@ public class Modele extends Observable {
 		r = new Recette(nomR, tempsPrep, listIngr, listEtape, newImagePathfinale, typeR);
 		
 		this.listeRecettes.put(r.nomRecette,r);
-		System.out.println(listeRecettes);
+		
+		switch(r.getTypeRC()){
+		case "Entrée":
+			listeEntree.add(r);
+			break;
+		case "Plat":
+			listePlat.add(r);
+			break;
+		case "Dessert":
+			listeDessert.add(r);
+			break;
+		}
+		triParCategorie.put("Entrée", listeEntree);
+		triParCategorie.put("Plat", listePlat);
+		triParCategorie.put("Dessert", listeDessert);
+		
+		//System.out.println(listeRecettes);
 		saveRecettes();
 		
 	}

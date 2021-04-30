@@ -18,7 +18,6 @@ import java.util.ResourceBundle;
 
 
 import Modele.Modele;
-import TAD.Ingredient;
 import TAD.Recette;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -55,6 +54,7 @@ public class Controleur implements Initializable,Observer {
 	@FXML private Button rechercheRecette;
 	@FXML private Button buttonAjouteRecette;
 	@FXML private TextField barreDeRecherche = new TextField();
+	@FXML private ComboBox<String> selectionCategorie;
 
 	// Button de la VueAjouterRecette (on pourait ajoutais un autre controlleur pour
 	// VueAjoutRecette)
@@ -148,16 +148,16 @@ public class Controleur implements Initializable,Observer {
 		//controle si le champ et vide ou non: sinon --> erreur
 		if(nomRecette.length()<=0) 
 		{
-			throw new Exception("Nom de la recette non donnée");
+			throw new Exception("Nom de la recette non donné");
 		}
 		if (preparation.length()<=0) {
-			throw new Exception("Temps de preparation de la recette non donnée");
+			throw new Exception("Temps de preparation de la recette non donné");
 		} 
 		if (ingredient.length()<=0) {
-			throw new Exception("Ingrediant de la recette non donnée");
+			throw new Exception("Ingredients de la recette non donnés");
 		} 
 		if (etape.length()<=0) {
-			throw new Exception("Etape de preparation de la recette non donnée");
+			throw new Exception("Etapes de preparation de la recette non données");
 		} 
 		if (pathImage.length()<=0) {
 			//alerte box ou a suppr
@@ -168,7 +168,7 @@ public class Controleur implements Initializable,Observer {
 		}
 		
 		
-		//System.out.println(nomRecette + preparation + ingrediant + etape);
+		//System.out.println(nomRecette + preparation + ingredient + etape);
 		//ajout dans le dico
 		this.mold.ajouteRecette(nomRecette, preparation, ingredient, etape, pathImage, typeR);
 		//copy and paste pathImage in ressource and add it
@@ -217,6 +217,8 @@ public class Controleur implements Initializable,Observer {
 		}catch(ClassCastException e){
 		}
 		try {
+			gridIngredient.getChildren().clear();
+			gridEtapes.getChildren().clear();
 			int lineIngre=0;
 			int lineEtape=0;
 			Image imageDelarecette;
@@ -230,6 +232,8 @@ public class Controleur implements Initializable,Observer {
 				gridIngredient.setMargin(lb, new Insets(10));
 				gridIngredient.setVisible(true);
 				gridIngredient.setPrefHeight((i+1)*50);
+				gridIngredient.setPrefWidth(gridIngredient.getPrefWidth()+50);
+				ingredientsRecette.setPrefWidth(ingredientsRecette.getPrefWidth()+50);
 			}
 			for (int i=0;i<((Recette)arg1).getEtapePreparation().size();i++) {
 				String Labelname="";
@@ -238,7 +242,10 @@ public class Controleur implements Initializable,Observer {
 				gridEtapes.add(lb, 0, lineEtape++);
 				gridEtapes.setMargin(lb, new Insets(10));
 				gridEtapes.setVisible(true);
+				gridEtapes.setPrefWidth(gridEtapes.getPrefWidth()+100);
 				etapesRecette.setPrefHeight((i+1)*50);
+				etapesRecette.setPrefWidth(etapesRecette.getPrefWidth()+100);
+				
 			}
 			noteRecette.setText(((Recette)arg1).getNoteR());
 		}catch(ClassCastException e){
@@ -253,8 +260,10 @@ public class Controleur implements Initializable,Observer {
 		titreRecette.setText(string);
 		mold.donnelarecette(string);
 
+	}
+	
+	public void rechercheAction() {
 		
-
 	}
 
 }

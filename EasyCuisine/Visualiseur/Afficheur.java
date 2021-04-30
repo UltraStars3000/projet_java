@@ -22,6 +22,7 @@ public class Afficheur extends Application {
 		Scene scene = new Scene(root);
 		primaryStage.getIcons().add(new Image("file:ressources/images/icon.png")); 
 		primaryStage.setTitle("EasyCuisine");
+		primaryStage.setResizable(false);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 

@@ -17,216 +17,236 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="720.0" prefWidth="1080.0" styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controleur.Controleur">
-   <children>
-      <Button fx:id="rechercheRecette" layoutX="614.0" layoutY="19.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="119.0" text="Rechercher">
-         <font>
-            <Font name="Calibri Light" size="18.0" />
-         </font>
-      </Button>
-      <ImageView fitHeight="465.0" fitWidth="624.0" layoutX="228.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../ressources/images/logo.png" />
-         </image>
-      </ImageView>
-      <AnchorPane fx:id="menu" layoutY="203.0" prefHeight="565.0" prefWidth="1080.0">
-         <children>
-            <Text layoutX="22.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recettes Favorites" wrappingWidth="249.13671875">
-               <font>
-                  <Font name="Trebuchet MS Bold" size="24.0" />
-               </font>
-            </Text>
-            <ScrollPane layoutX="22.0" layoutY="52.0" prefHeight="221.0" prefWidth="1045.0">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="182.0" prefWidth="1045.0" />
-              </content>
-            </ScrollPane>
-            <ScrollPane layoutX="22.0" layoutY="341.0" prefHeight="212.0" prefWidth="1045.0">
-              <content>
-                <AnchorPane fx:id="allRecettes" minHeight="0.0" minWidth="0.0" prefHeight="213.0" prefWidth="1051.0">
+	<children>
+		<ComboBox fx:id="selectionCategorie" layoutX="584.0" layoutY="18.0" prefHeight="40.0" prefWidth="154.0" promptText="Catégorie">
+			<items>
+				<FXCollections fx:factory="observableArrayList">
+					<String fx:value="Toutes" />
+					<String fx:value="Entrées" />
+					<String fx:value="Plats" />
+					<String fx:value="Desserts" />
+				</FXCollections>
+			</items>
+		</ComboBox>
+		<Button fx:id="rechercheRecette" layoutX="757.0" layoutY="18.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Rechercher">
+			<font>
+				<Font name="Calibri Light" size="18.0" />
+			</font>
+		</Button>
+		<ImageView fitHeight="465.0" fitWidth="624.0" layoutX="228.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+			<image>
+				<Image url="@../../ressources/images/logo.png" />
+			</image>
+		</ImageView>
+		<AnchorPane fx:id="menu" layoutY="203.0" prefHeight="565.0" prefWidth="1080.0">
+			<children>
+				<Text layoutX="22.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recettes Favorites" wrappingWidth="249.13671875">
+					<font>
+						<Font name="Trebuchet MS Bold" size="24.0" />
+					</font>
+				</Text>
+				<ScrollPane layoutX="22.0" layoutY="52.0" prefHeight="221.0" prefWidth="1045.0">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="220.0" prefWidth="1045.0">
                      <children>
-                        <GridPane fx:id="grilleRecette" layoutX="25.0" layoutY="24.0" prefHeight="160.0" prefWidth="974.0">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                        </GridPane>
-                     </children></AnchorPane>
-              </content>
-            </ScrollPane>
-            <Text layoutX="22.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Toutes les recettes" wrappingWidth="249.13671875">
-               <font>
-                  <Font name="Trebuchet MS Bold" size="24.0" />
-               </font>
-            </Text>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="pageRecette" layoutY="86.0" prefHeight="682.0" prefWidth="1080.0" styleClass="body" visible="false">
-         <children>
-            <Text fx:id="titreRecette" layoutX="24.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tomates farcies" underline="true" wrappingWidth="509.7890625">
-               <font>
-                  <Font size="40.0" />
-               </font>
-            </Text>
-            <ImageView fx:id="imageRecette" fitHeight="107.0" fitWidth="260.0" layoutX="32.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../ressources/imageRecette/aucune.png" />
-               </image>
-            </ImageView>
-            <ScrollPane layoutX="24.0" layoutY="246.0" prefHeight="423.0" prefWidth="427.0">
-              <content>
-                <AnchorPane fx:id="ingredientsRecette" minHeight="0.0" minWidth="0.0" prefHeight="427.0" prefWidth="425.0">
-                     <children>
-                        <GridPane fx:id="gridIngredient" layoutX="13.0" layoutY="22.0" prefHeight="371.0" prefWidth="386.0">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                        </GridPane>
-                     </children></AnchorPane>
-              </content>
-            </ScrollPane>
-            <Text layoutX="32.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrédients :">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <ScrollPane layoutX="563.0" layoutY="82.0" prefHeight="371.0" prefWidth="492.0">
-              <content>
-                <AnchorPane fx:id="etapesRecette" minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="485.0">
-                     <children>
-                        <GridPane fx:id="gridEtapes" layoutX="31.0" layoutY="6.0" prefHeight="332.0" prefWidth="427.0">
+                        <GridPane fx:id="grilleRecherche" layoutX="36.0" layoutY="30.0" prefHeight="160.0" prefWidth="974.0">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                            </columnConstraints>
                         </GridPane>
                      </children></AnchorPane>
-              </content>
-            </ScrollPane>
-            <Text layoutX="563.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Étapes :">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <Text layoutX="563.0" layoutY="516.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note :">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <TextArea fx:id="noteRecette" layoutX="563.0" layoutY="535.0" prefHeight="91.0" prefWidth="492.0" />
-            <Button fx:id="btnSauvegarder" layoutX="661.0" layoutY="636.0" mnemonicParsing="false" onAction="#saveNote" text="Sauvegarder" />
-         </children>
-      </AnchorPane>
-      <TextField fx:id="barreDeRecherche" layoutX="101.0" layoutY="19.0" prefHeight="30.0" prefWidth="500.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </TextField>
-      <Button fx:id="buttonAjouteRecette" layoutX="880.0" layoutY="18.0" mnemonicParsing="false" onAction="#sceneAjouterRecette" prefHeight="39.0" prefWidth="186.0" text="Ajouter une recette">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnAccueil" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#backToVueRecette" prefHeight="53.0" prefWidth="58.0">
-         <graphic>
-            <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../ressources/images/home.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <AnchorPane fx:id="PageAjouterRecette" prefHeight="769.0" prefWidth="1090.0" styleClass="body" stylesheets="@style.css" visible="false">
-         <children>
-            <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="620.0" prefWidth="1058.0">
-               <children>
-                  <Label fx:id="titrePage" layoutX="43.0" layoutY="75.0" text="Ajout d'une recette : " textAlignment="CENTER" underline="true">
-                     <font>
-                        <Font name="System Bold" size="28.0" />
-                     </font>
-                  </Label>
-                  <AnchorPane layoutX="34.0" layoutY="116.0" minHeight="0.0" minWidth="0.0" prefHeight="504.0" prefWidth="514.0">
-                     <children>
-                        <Label layoutX="14.0" layoutY="14.0" text="Nom de la recette :">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="textFieldNomRecette" layoutX="233.0" layoutY="11.0" prefHeight="30.0" prefWidth="269.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </TextField>
-                        <Label layoutX="9.0" layoutY="67.0" text="Temps de préparation :">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="textFieldPrep" layoutX="271.0" layoutY="64.0" prefHeight="30.0" prefWidth="231.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </TextField>
-                        <Label layoutX="10.0" layoutY="117.0" text="Ingrédients requis :">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <TextArea fx:id="textAreaIngre" layoutX="12.0" layoutY="159.0" prefHeight="127.0" prefWidth="462.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </TextArea>
-                        <Button fx:id="btnAjouterImage" layoutX="11.0" layoutY="294.0" mnemonicParsing="false" onAction="#selecteImage" prefHeight="39.0" prefWidth="100.0" text="Ajouter Image">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Button>
-                        <Label layoutX="11.0" layoutY="428.0" text="Catégorie :">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <ComboBox fx:id="categorieRecette" layoutX="10.0" layoutY="460.0" prefHeight="30.0" prefWidth="182.0" promptText="Choisissez une catégorie">
-                           <items>
-                              <FXCollections fx:factory="observableArrayList">
-                                 <String fx:value="Entrée" />
-                                 <String fx:value="Plat" />
-                                 <String fx:value="Dessert" />
-                              </FXCollections>
-                           </items>
-                        </ComboBox>
-                        <Label fx:id="afficherPathImage" layoutX="26.0" layoutY="358.0" prefHeight="23.0" prefWidth="448.0" style="-fx-background-color: white;">
-                           <font>
-                              <Font size="6.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="567.0" layoutY="75.0" minHeight="0.0" minWidth="0.0" prefHeight="512.0" prefWidth="462.0">
-                     <children>
-                        <Label layoutX="14.0" layoutY="14.0" text="Étapes de préparation :">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <TextArea fx:id="textAreaEtape" layoutX="14.0" layoutY="42.0" prefHeight="471.0" prefWidth="441.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </TextArea>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
-            <Button fx:id="buttonAnnulerRecette" layoutX="586.0" layoutY="658.0" mnemonicParsing="false" onAction="#backToVueRecette" prefHeight="40.0" prefWidth="135.0" text="Annuler">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Button>
-            <Button fx:id="buttonAjouterRecette" layoutX="391.0" layoutY="658.0" mnemonicParsing="false" onAction="#AjouterRecette" prefHeight="40.0" prefWidth="135.0" text="Ajouter">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-   </children>
+					</content>
+				</ScrollPane>
+				<ScrollPane layoutX="22.0" layoutY="341.0" prefHeight="212.0" prefWidth="1045.0">
+					<content>
+						<AnchorPane fx:id="allRecettes" minHeight="0.0" minWidth="0.0" prefHeight="213.0" prefWidth="1051.0">
+							<children>
+								<GridPane fx:id="grilleRecette" layoutX="25.0" layoutY="24.0" prefHeight="160.0" prefWidth="974.0">
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+									</columnConstraints>
+								</GridPane>
+							</children>
+						</AnchorPane>
+					</content>
+				</ScrollPane>
+				<Text layoutX="22.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Toutes les recettes" wrappingWidth="249.13671875">
+					<font>
+						<Font name="Trebuchet MS Bold" size="24.0" />
+					</font>
+				</Text>
+			</children>
+		</AnchorPane>
+		<AnchorPane fx:id="pageRecette" layoutY="86.0" prefHeight="682.0" prefWidth="1080.0" styleClass="body" visible="false">
+			<children>
+				<Text fx:id="titreRecette" layoutX="24.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tomates farcies" underline="true" wrappingWidth="509.7890625">
+					<font>
+						<Font size="40.0" />
+					</font>
+				</Text>
+				<ImageView fx:id="imageRecette" fitHeight="107.0" fitWidth="260.0" layoutX="32.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@../../ressources/imageRecette/aucune.png" />
+					</image>
+				</ImageView>
+				<ScrollPane layoutX="24.0" layoutY="246.0" prefHeight="423.0" prefWidth="427.0">
+					<content>
+						<AnchorPane fx:id="ingredientsRecette" minHeight="0.0" minWidth="0.0" prefHeight="423.0" prefWidth="427.0">
+							<children>
+								<GridPane fx:id="gridIngredient" layoutX="-2.0" layoutY="2.0" prefHeight="423.0" prefWidth="427.0">
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+									</columnConstraints>
+								</GridPane>
+							</children>
+						</AnchorPane>
+					</content>
+				</ScrollPane>
+				<Text layoutX="32.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrédients :">
+					<font>
+						<Font size="20.0" />
+					</font>
+				</Text>
+				<ScrollPane layoutX="563.0" layoutY="82.0" prefHeight="371.0" prefWidth="492.0">
+					<content>
+						<AnchorPane fx:id="etapesRecette" minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="490.0">
+							<children>
+								<GridPane fx:id="gridEtapes" layoutX="1.0" prefHeight="371.0" prefWidth="492.0">
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+									</columnConstraints>
+								</GridPane>
+							</children>
+						</AnchorPane>
+					</content>
+				</ScrollPane>
+				<Text layoutX="563.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Étapes :">
+					<font>
+						<Font size="20.0" />
+					</font>
+				</Text>
+				<Text layoutX="563.0" layoutY="516.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note :">
+					<font>
+						<Font size="20.0" />
+					</font>
+				</Text>
+				<TextArea fx:id="noteRecette" layoutX="563.0" layoutY="535.0" prefHeight="91.0" prefWidth="492.0" />
+				<Button fx:id="btnSauvegarder" layoutX="661.0" layoutY="636.0" mnemonicParsing="false" onAction="#saveNote" text="Sauvegarder" />
+			</children>
+		</AnchorPane>
+		<TextField fx:id="barreDeRecherche" layoutX="101.0" layoutY="19.0" prefHeight="40.0" prefWidth="462.0">
+			<font>
+				<Font size="16.0" />
+			</font>
+		</TextField>
+		<Button fx:id="buttonAjouteRecette" layoutX="896.0" layoutY="18.0" mnemonicParsing="false" onAction="#sceneAjouterRecette" prefHeight="40.0" prefWidth="180.0" text="Ajouter une recette">
+			<font>
+				<Font size="16.0" />
+			</font>
+		</Button>
+		<Button fx:id="btnAccueil" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#backToVueRecette" prefHeight="53.0" prefWidth="58.0">
+			<graphic>
+				<ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@../../ressources/images/home.png" />
+					</image>
+				</ImageView>
+			</graphic>
+		</Button>
+		<AnchorPane fx:id="PageAjouterRecette" prefHeight="769.0" prefWidth="1090.0" styleClass="body" stylesheets="@style.css" visible="false">
+			<children>
+				<AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="620.0" prefWidth="1058.0">
+					<children>
+						<Label fx:id="titrePage" layoutX="43.0" layoutY="75.0" text="Ajout d'une recette : " textAlignment="CENTER" underline="true">
+							<font>
+								<Font name="System Bold" size="28.0" />
+							</font>
+						</Label>
+						<AnchorPane layoutX="34.0" layoutY="116.0" minHeight="0.0" minWidth="0.0" prefHeight="504.0" prefWidth="514.0">
+							<children>
+								<Label layoutX="14.0" layoutY="14.0" text="Nom de la recette :">
+									<font>
+										<Font size="20.0" />
+									</font>
+								</Label>
+								<TextField fx:id="textFieldNomRecette" layoutX="233.0" layoutY="11.0" prefHeight="30.0" prefWidth="269.0">
+									<font>
+										<Font size="14.0" />
+									</font>
+								</TextField>
+								<Label layoutX="9.0" layoutY="67.0" text="Temps de préparation :">
+									<font>
+										<Font size="20.0" />
+									</font>
+								</Label>
+								<TextField fx:id="textFieldPrep" layoutX="271.0" layoutY="64.0" prefHeight="30.0" prefWidth="231.0">
+									<font>
+										<Font size="14.0" />
+									</font>
+								</TextField>
+								<Label layoutX="10.0" layoutY="117.0" text="Ingrédients requis :">
+									<font>
+										<Font size="20.0" />
+									</font>
+								</Label>
+								<TextArea fx:id="textAreaIngre" layoutX="12.0" layoutY="159.0" prefHeight="127.0" prefWidth="462.0">
+									<font>
+										<Font size="14.0" />
+									</font>
+								</TextArea>
+								<Button fx:id="btnAjouterImage" layoutX="11.0" layoutY="294.0" mnemonicParsing="false" onAction="#selecteImage" prefHeight="39.0" prefWidth="100.0" text="Ajouter Image">
+									<font>
+										<Font size="20.0" />
+									</font>
+								</Button>
+								<Label layoutX="11.0" layoutY="428.0" text="Catégorie :">
+									<font>
+										<Font size="20.0" />
+									</font>
+								</Label>
+								<ComboBox fx:id="categorieRecette" layoutX="10.0" layoutY="460.0" prefHeight="39.0" prefWidth="319.0" promptText="Choisissez une catégorie">
+									<items>
+										<FXCollections fx:factory="observableArrayList">
+											<String fx:value="Entrée" />
+											<String fx:value="Plat" />
+											<String fx:value="Dessert" />
+										</FXCollections>
+									</items>
+								</ComboBox>
+								<Label fx:id="afficherPathImage" layoutX="12.0" layoutY="358.0" prefHeight="23.0" prefWidth="462.0" style="-fx-background-color: white;">
+									<font>
+										<Font size="6.0" />
+									</font>
+								</Label>
+							</children>
+						</AnchorPane>
+						<AnchorPane layoutX="567.0" layoutY="75.0" minHeight="0.0" minWidth="0.0" prefHeight="512.0" prefWidth="462.0">
+							<children>
+								<Label layoutX="14.0" layoutY="14.0" text="Étapes de préparation :">
+									<font>
+										<Font size="20.0" />
+									</font>
+								</Label>
+								<TextArea fx:id="textAreaEtape" layoutX="14.0" layoutY="42.0" prefHeight="471.0" prefWidth="441.0">
+									<font>
+										<Font size="14.0" />
+									</font>
+								</TextArea>
+							</children>
+						</AnchorPane>
+					</children>
+				</AnchorPane>
+				<Button fx:id="buttonAnnulerRecette" layoutX="586.0" layoutY="658.0" mnemonicParsing="false" onAction="#backToVueRecette" prefHeight="40.0" prefWidth="135.0" text="Annuler">
+					<font>
+						<Font name="System Bold" size="24.0" />
+					</font>
+				</Button>
+				<Button fx:id="buttonAjouterRecette" layoutX="391.0" layoutY="658.0" mnemonicParsing="false" onAction="#AjouterRecette" prefHeight="40.0" prefWidth="135.0" text="Ajouter">
+					<font>
+						<Font name="System Bold" size="24.0" />
+					</font>
+				</Button>
+			</children>
+		</AnchorPane>
+	</children>
 </AnchorPane>

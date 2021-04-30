@@ -12,7 +12,7 @@ public class Recette implements Serializable {
 	public String nomRecette;
 	private String tempsPreparation;
 	private String typeRC;
-	List<Ingredient> listIngredient = new ArrayList<>();
+	List<String> listIngredient = new ArrayList<>();
 	List<String> etapePreparation = new ArrayList<>();
 	private String imagePath;
 	public String noteR;
@@ -30,14 +30,14 @@ public class Recette implements Serializable {
 	public Recette() {
 		
 	}
-	public Recette(String recette, String tempsPrep, ArrayList<Ingredient> ingredient, ArrayList<String> preparation, String pathImage, String typeR) {
+	public Recette(String recette, String tempsPrep, ArrayList<String> ingredient, ArrayList<String> preparation, String pathImage, String typeR) {
 		this.nomRecette = recette;
 		this.tempsPreparation = tempsPrep;
 		this.typeRC = typeR;
 		this.imagePath = pathImage;
 
 		for (int i = 0; i < ingredient.size(); i++) {
-			this.listIngredient.add((Ingredient) ingredient.get(i));
+			this.listIngredient.add((String) ingredient.get(i));
 		}
 		for (int i = 0; i < preparation.size(); i++) {
 			this.etapePreparation.add((String) preparation.get(i));
@@ -78,10 +78,10 @@ public class Recette implements Serializable {
 	public void setTypeRC(String typeRC) {
 		this.typeRC = typeRC;
 	}
-	public List<Ingredient> getListIngredient() {
+	public List<String> getListIngredient() {
 		return listIngredient;
 	}
-	public void setListIngredient(List<Ingredient> listIngredient) {
+	public void setListIngredient(List<String> listIngredient) {
 		this.listIngredient = listIngredient;
 	}
 	public List<String> getEtapePreparation() {

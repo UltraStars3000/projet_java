@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_281" class="java.beans.XMLDecoder">
+ <object class="java.util.HashMap">
+  <void method="put">
+   <string>Cake salé au jambon et aux olives</string>
+   <object class="TAD.Recette" id="Recette0">
+    <void class="TAD.Recette" method="getField">
+     <string>nomRecette</string>
+     <void method="set">
+      <object idref="Recette0"/>
+      <string>Cake salé au jambon et aux olives</string>
+     </void>
+    </void>
+    <void property="etapePreparation">
+     <void method="add">
+      <string>1. Préchauffer le four à 180°C (thermostat 6)</string>
+     </void>
+     <void method="add">
+      <string>2. Couper les olives en rondelles et le jambon en morceaux</string>
+     </void>
+     <void method="add">
+      <string>3. Verser les oeufs dans la farine et mélanger</string>
+     </void>
+     <void method="add">
+      <string>4. Ajouter le lait et l&apos;huile puis mélanger</string>
+     </void>
+     <void method="add">
+      <string>5. Ajouter le jambon, les olives et le gruyère puis mélanger</string>
+     </void>
+     <void method="add">
+      <string>6. Ajouter la levure et, pour ne pas changer, mélanger</string>
+     </void>
+     <void method="add">
+      <string>7. Mettre le tout dans un plat à cake au préalable beurré et placer au four 45 min</string>
+     </void>
+    </void>
+    <void property="imagePath">
+     <string>ressources\imageRecette\Cake_salé_au_jambon_et_aux_olives.png</string>
+    </void>
+    <void property="listIngredient">
+     <void method="add">
+      <string>1 cuillère à soupe d&apos;huile</string>
+     </void>
+     <void method="add">
+      <string>1 sachet de levure chimique</string>
+     </void>
+     <void method="add">
+      <string>10 cl de lait</string>
+     </void>
+     <void method="add">
+      <string>200 g de jambon</string>
+     </void>
+     <void method="add">
+      <string>150 g de farine</string>
+     </void>
+     <void method="add">
+      <string>150 g d&apos;olive verte dénoyautées</string>
+     </void>
+     <void method="add">
+      <string>75 g de gruyère râpé</string>
+     </void>
+     <void method="add">
+      <string>4 oeufs</string>
+     </void>
+    </void>
+    <void property="tempsPreparation">
+     <string>65 min</string>
+    </void>
+    <void property="typeRC">
+     <string>Entrée</string>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>Bricks au thon faciles</string>
+   <object class="TAD.Recette" id="Recette1">
+    <void class="TAD.Recette" method="getField">
+     <string>nomRecette</string>
+     <void method="set">
+      <object idref="Recette1"/>
+      <string>Bricks au thon faciles</string>
+     </void>
+    </void>
+    <void property="etapePreparation">
+     <void method="add">
+      <string>1. Faire cuire les œufs dans l&apos;eau bouillante pour qu&apos;ils deviennent durs (9 minutes)</string>
+     </void>
+     <void method="add">
+      <string>2. Écailler les œufs, les écraser avec une fourchette et les mélanger avec le persil et les oignons</string>
+     </void>
+     <void method="add">
+      <string>3. Ajouter le thon émietté et le jus du citron pressé</string>
+     </void>
+     <void method="add">
+      <string>4. Poivrer à votre convenance en n&apos;hésitant pas à goûter la farce</string>
+     </void>
+     <void method="add">
+      <string>5. Mettre un peu de farce au centre de chaque feuille de brick puis replier les quatre côtés de la feuille sur le dessus pour former un rectangle</string>
+     </void>
+    </void>
+    <void property="imagePath">
+     <string>ressources\imageRecette\Bricks_au_thon_faciles.png</string>
+    </void>
+    <void property="listIngredient">
+     <void method="add">
+      <string>poivre</string>
+     </void>
+     <void method="add">
+      <string>3 cuillères d&apos;huile d&apos;olive</string>
+     </void>
+     <void method="add">
+      <string>1 citron</string>
+     </void>
+     <void method="add">
+      <string>30 g de persil haché surgelé</string>
+     </void>
+     <void method="add">
+      <string>280 g de thon au naturel</string>
+     </void>
+     <void method="add">
+      <string>10 feuilles de brick</string>
+     </void>
+     <void method="add">
+      <string>80 g d&apos;oignon coupés</string>
+     </void>
+     <void method="add">
+      <string>3 oeufs</string>
+     </void>
+    </void>
+    <void property="tempsPreparation">
+     <string>25 min</string>
+    </void>
+    <void property="typeRC">
+     <string>Entrée</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

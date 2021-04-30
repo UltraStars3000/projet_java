@@ -15,14 +15,28 @@ Label {
     -fx-font-family: "Geometos";
 }
 
-
 Button {
+	-fx-font-size:18px ;
+    -fx-font-family: "Louis George Café";
+}
+
+ComboBox {
 	-fx-font-size:18px ;
     -fx-font-family: "Louis George Café";
 }
 
 #titrePage {
 	-fx-font-size:24px ;
+    -fx-font-family: "Geometos";
+}
+
+#titrePage {
+	-fx-font-size:24px ;
+    -fx-font-family: "Geometos";
+}
+
+#titreRecette {
+	-fx-font-size:18px ;
     -fx-font-family: "Geometos";
 }
 
