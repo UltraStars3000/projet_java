@@ -85,7 +85,7 @@
      <string>noteR</string>
      <void method="set">
       <object idref="Recette1"/>
-      <string>SAKAMACHE</string>
+      <string></string>
      </void>
     </void>
     <void property="etapePreparation">

@@ -1,9 +1,7 @@
 package TAD;
 
-import java.io.File;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Recette implements Serializable {
@@ -16,7 +14,6 @@ public class Recette implements Serializable {
 	List<String> etapePreparation = new ArrayList<>();
 	private String imagePath;
 	public String noteR;
-	// private Image img;
 
 	/**
 	 * Constructeur d'une recette
@@ -104,7 +101,6 @@ public class Recette implements Serializable {
 	}
 
 	public void ajouterNotes(String text) {
-		// TODO Auto-generated method stub
 		this.noteR=text;
 	}
 	

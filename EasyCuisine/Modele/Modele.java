@@ -1,6 +1,5 @@
 package Modele;
 
-
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
 import java.io.BufferedInputStream;
@@ -15,7 +14,6 @@ import java.io.OutputStream;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Observable;
 
 import TAD.Recette;
@@ -131,7 +129,6 @@ public class Modele extends Observable {
 		triParCategorie.put("Plat", listePlat);
 		triParCategorie.put("Dessert", listeDessert);
 		
-		//System.out.println(listeRecettes);
 		saveRecettes();
 		
 	}
