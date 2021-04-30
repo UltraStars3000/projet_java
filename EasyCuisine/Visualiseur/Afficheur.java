@@ -1,9 +1,14 @@
 package Visualiseur;
 
+import java.net.URL;
+import java.util.Optional;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class Afficheur extends Application {
@@ -13,10 +18,11 @@ public class Afficheur extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 
-		Parent root = FXMLLoader.load(getClass().getResource("/Visualiseur/VueRecette.fxml"));
-
+		Parent root = FXMLLoader.load(getClass().getResource("VueRecette.fxml"));
+		Scene scene = new Scene(root);
+		primaryStage.getIcons().add(new Image("file:ressources/images/icon.png")); 
 		primaryStage.setTitle("EasyCuisine");
-		primaryStage.setScene(new Scene(root));
+		primaryStage.setScene(scene);
 		primaryStage.show();
 
 		// Test de base
