@@ -206,5 +206,97 @@ public class Modele extends Observable {
 		saveRecettes();
 		
 	}
+	public void searchCategorie(String nameR, String catR) {
+		ArrayList<Recette> arrayRec = new ArrayList<>();
+		ArrayList<Recette> temp = new ArrayList<>();
+		switch(catR) {
+		case "Toutes":
+			for(String rec : this.listeRecettes.keySet()){
+				if((rec.toLowerCase()).contains(nameR.toLowerCase())) {
+					arrayRec.add(this.listeRecettes.get(rec));
+				}
+			}
+			break;
+		case "Entrées":
+			for(String rec : this.triParCategorie.keySet()){
+				if(rec == "Entrée") {
+					temp = this.triParCategorie.get(rec);
+				}
+			}
+			for(int i=0;i<temp.size();i++) {
+				if(((temp.get(i).getNomRecette()).toLowerCase()).contains(nameR.toLowerCase())) {
+					arrayRec.add(temp.get(i));
+				}
+			}
+			break;
+		case "Plats":
+			for(String rec : this.triParCategorie.keySet()){
+				if(rec == "Plat") {
+					temp = this.triParCategorie.get(rec);
+				}
+			}
+			for(int i=0;i<temp.size();i++) {
+				if(((temp.get(i).getNomRecette()).toLowerCase()).contains(nameR.toLowerCase())) {
+					arrayRec.add(temp.get(i));
+				}
+			}
+			break;
+		case "Desserts":
+			for(String rec : this.triParCategorie.keySet()){
+				if(rec == "Dessert") {
+					temp = this.triParCategorie.get(rec);
+				}
+			}
+			for(int i=0;i<temp.size();i++) {
+				if(((temp.get(i).getNomRecette()).toLowerCase()).contains(nameR.toLowerCase())) {
+					arrayRec.add(temp.get(i));
+				}
+			}
+			break;
+		case "Ingrédient":
+			for(String rec : this.listeRecettes.keySet()){
+				Recette recSel = this.listeRecettes.get(rec);
+				for(int j=0;j<recSel.getListIngredient().size();j++) {
+					if(((recSel.getListIngredient().get(j)).toLowerCase()).contains(nameR.toLowerCase())) {
+						arrayRec.add(this.listeRecettes.get(rec));
+					}
+				}
+			}
+			break;
+		}
+		envoiInformation(arrayRec);
+	}
+	public void searchCategorie(String catR) {
+		ArrayList<Recette> arrayRec = new ArrayList<>();
+		switch(catR.toString()) {
+		case "Toutes":
+			for(String rec : this.listeRecettes.keySet()){
+				arrayRec.add(this.listeRecettes.get(rec));
+			}
+			break;
+		case "Entrées":
+			for(String rec : this.triParCategorie.keySet()){
+				if(rec == "Entrée") {
+					arrayRec = this.triParCategorie.get(rec);
+				}
+			}
+			break;
+		case "Plats":
+			for(String rec : this.triParCategorie.keySet()){
+				if(rec == "Plat") {
+					arrayRec = this.triParCategorie.get(rec);
+				}
+			}
+			break;
+		case "Desserts":
+			for(String rec : this.triParCategorie.keySet()){
+				if(rec == "Dessert") {
+					arrayRec = this.triParCategorie.get(rec);
+				}
+			}
+			break;
+		}
+		envoiInformation(arrayRec);
+	}
 
 }

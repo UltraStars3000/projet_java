@@ -25,6 +25,7 @@
 					<String fx:value="Entrées" />
 					<String fx:value="Plats" />
 					<String fx:value="Desserts" />
+					<String fx:value="Ingrédient" />
 				</FXCollections>
 			</items>
 		</ComboBox>

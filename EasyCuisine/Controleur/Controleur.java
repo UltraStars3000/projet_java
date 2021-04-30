@@ -46,16 +46,16 @@ import javafx.stage.Stage;
 
 public class Controleur implements Initializable,Observer {
 	
-	boolean Pasledroit=false;
-	Modele mold = new Modele();
-
+	Modele modl = new Modele();
+	boolean boolRecherche = false;
 
 	// Button de la VueRecette
 	@FXML private Button rechercheRecette;
 	@FXML private Button buttonAjouteRecette;
 	@FXML private TextField barreDeRecherche = new TextField();
 	@FXML private ComboBox<String> selectionCategorie;
-
+	@FXML private GridPane grilleRecherche;
+	@FXML private AnchorPane paneRecherche;
 	// Button de la VueAjouterRecette (on pourait ajoutais un autre controlleur pour
 	// VueAjoutRecette)
 	// Si on rejoute un controlleur faut le specifier dans le fxml ->
@@ -87,9 +87,9 @@ public class Controleur implements Initializable,Observer {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
-		mold.addObserver(this);
-		mold.remplirRecettes();
-		mold.lireRecettes();
+		modl.addObserver(this);
+		modl.remplirRecettes();
+		modl.lireRecettes();
 
 
 
@@ -123,7 +123,7 @@ public class Controleur implements Initializable,Observer {
 		pageRecette.setVisible(false);
 		PageAjouterRecette.setVisible(false);
 		menu.setVisible(true);
-		mold.lireRecettes();
+		modl.lireRecettes();
 		
 	}
 
@@ -170,7 +170,7 @@ public class Controleur implements Initializable,Observer {
 		
 		//System.out.println(nomRecette + preparation + ingredient + etape);
 		//ajout dans le dico
-		this.mold.ajouteRecette(nomRecette, preparation, ingredient, etape, pathImage, typeR);
+		this.modl.ajouteRecette(nomRecette, preparation, ingredient, etape, pathImage, typeR);
 		//copy and paste pathImage in ressource and add it
 		
 		
@@ -194,27 +194,54 @@ public class Controleur implements Initializable,Observer {
 
 	@Override
 	public void update(Observable arg0, Object arg1) {	
-		try {
-			int line = 0; 
-			for (int i=0;i<((ArrayList<Recette>) arg1).size();i++) {
-				Button in = new Button((((ArrayList<Recette>) arg1).get(i)).getNomRecette());
-				
-				in.setOnMouseClicked(event->{
+		if(boolRecherche == false) {
+			try {
+				int line = 0; 
+				for (int i=0;i<((ArrayList<Recette>) arg1).size();i++) {
+					Button in = new Button((((ArrayList<Recette>) arg1).get(i)).getNomRecette());
 					
-					try {
-						Affichelarecette(((Button) in).getText());
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-	
-				});
-				grilleRecette.add(in, 0, line++);
-				grilleRecette.setMargin(in, new Insets(10));
-				grilleRecette.setVisible(true);
-				allRecettes.setPrefHeight((i+1)*80);
+					in.setOnMouseClicked(event->{
+						
+						try {
+							Affichelarecette(((Button) in).getText());
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+		
+					});
+					grilleRecette.add(in, 0, line++);
+					grilleRecette.setMargin(in, new Insets(10));
+					grilleRecette.setVisible(true);
+					allRecettes.setPrefHeight((i+1)*80);
+				}
+			}catch(ClassCastException e){
 			}
-		}catch(ClassCastException e){
+		}else {
+			grilleRecherche.getChildren().clear();
+			try {
+				int line = 0; 
+				for (int i=0;i<((ArrayList<Recette>) arg1).size();i++) {
+					Button in = new Button((((ArrayList<Recette>) arg1).get(i)).getNomRecette());
+					
+					in.setOnMouseClicked(event->{
+						
+						try {
+							Affichelarecette(((Button) in).getText());
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+		
+					});
+					grilleRecherche.add(in, 0, line++);
+					grilleRecherche.setMargin(in, new Insets(10));
+					grilleRecherche.setVisible(true);
+					paneRecherche.setPrefHeight((i+1)*80);
+					boolRecherche = false;
+				}
+			}catch(ClassCastException e){
+			}
 		}
 		try {
 			gridIngredient.getChildren().clear();
@@ -252,18 +279,25 @@ public class Controleur implements Initializable,Observer {
 		}
 	}
 	public void saveNote(ActionEvent e2) throws IOException {
-		mold.saveNote(noteRecette.getText(), titreRecette.getText());
+		modl.saveNote(noteRecette.getText(), titreRecette.getText());
 	}
 	public void Affichelarecette(String string) throws IOException {
 
 		pageRecette.setVisible(true);
 		titreRecette.setText(string);
-		mold.donnelarecette(string);
+		modl.donnelarecette(string);
 
 	}
 	
 	public void rechercheAction() {
-		
+		boolRecherche = true;
+		if(barreDeRecherche.getText().length() > 0) {
+			modl.searchCategorie(barreDeRecherche.getText(), selectionCategorie.getValue());
+		}else if(selectionCategorie.getValue() != "Ingrédient"){
+			modl.searchCategorie(selectionCategorie.getValue());
+		}else {
+			System.out.println("VEUILLEZ PRECISER UN INGRÉDIENT A RECHERCHER");
+		}
 	}
 
 }
