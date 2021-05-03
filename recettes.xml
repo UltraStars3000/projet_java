@@ -2,12 +2,346 @@
 <java version="15.0.2" class="java.beans.XMLDecoder">
  <object class="java.util.HashMap">
   <void method="put">
-   <string>Cake salé au jambon et aux olives</string>
+   <string>Wok de chou-fleur</string>
    <object class="TAD.Recette" id="Recette0">
     <void class="TAD.Recette" method="getField">
      <string>nomRecette</string>
      <void method="set">
       <object idref="Recette0"/>
+      <string>Wok de chou-fleur</string>
+     </void>
+    </void>
+    <void property="etapePreparation">
+     <void method="add">
+      <string>1. Découper le chou-fleur en bouquets, et les faire cuire dans l&apos;eau salée 15 min (il faut qu&apos;ils soient encore un peu croquants)</string>
+     </void>
+     <void method="add">
+      <string>2. Détaillez le poivron en cubes, hachez l&apos;oignon, râpez le gingembre (1 cuillère à café), et hachez l&apos;ail</string>
+     </void>
+     <void method="add">
+      <string>3. Egouttez les bouquets de chou fleur</string>
+     </void>
+     <void method="add">
+      <string>4. Faire chauffer le wok, avec un peu d&apos;huile. Mettre l&apos;oignon, l&apos;ail, le gingembre, les 4 épices, puis le poivron, et enfin le chou-fleur</string>
+     </void>
+     <void method="add">
+      <string>5. Remuer bien, ajouter 1 petit verre d&apos;eau et laisser cuire 5 min. Servir chaud.</string>
+     </void>
+    </void>
+    <void property="imagePath">
+     <string>ressources\imageRecette\Wok_de_chou-fleur.png</string>
+    </void>
+    <void property="listIngredient">
+     <void method="add">
+      <string>huile et un petit verre d&apos;eau</string>
+     </void>
+     <void method="add">
+      <string>sel</string>
+     </void>
+     <void method="add">
+      <string>poivre</string>
+     </void>
+     <void method="add">
+      <string>1 cuillère à café de quatre-épices</string>
+     </void>
+     <void method="add">
+      <string>gingembre frais</string>
+     </void>
+     <void method="add">
+      <string>1 gousse d&apos;ail</string>
+     </void>
+     <void method="add">
+      <string>1 chou-fleur</string>
+     </void>
+     <void method="add">
+      <string>1 poivron rouge</string>
+     </void>
+     <void method="add">
+      <string>1 oignon</string>
+     </void>
+    </void>
+    <void property="tempsPreparation">
+     <string>25 min</string>
+    </void>
+    <void property="typeRC">
+     <string>Plat</string>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>Brandade de morue</string>
+   <object class="TAD.Recette" id="Recette1">
+    <void class="TAD.Recette" method="getField">
+     <string>nomRecette</string>
+     <void method="set">
+      <object idref="Recette1"/>
+      <string>Brandade de morue</string>
+     </void>
+    </void>
+    <void property="etapePreparation">
+     <void method="add">
+      <string>1. Faire dessaler la morue en la faisant tremper dans l&apos;eau 36 à 48 heures avant le moment de préparer la brandade (en changeant l&apos;eau régulièrement)</string>
+     </void>
+     <void method="add">
+      <string>2. Faire cuire les pommes de terres et les écraser à la fourchette</string>
+     </void>
+     <void method="add">
+      <string>3. Émietter la morue dessalée et mélanger avec les pommes de terre écrasées, l&apos;ail pilé et le persil haché</string>
+     </void>
+     <void method="add">
+      <string>4. Ajouter petit à petit l&apos;huile d&apos;olive (plus il y en a plus c&apos;est bon)</string>
+     </void>
+     <void method="add">
+      <string>5. Poivrer. Goûter et ajouter éventuellement un peu de sel</string>
+     </void>
+     <void method="add">
+      <string>6. Mettre la purée dans un plat allant au four et faire cuire 15 à 20 min. Passer sous le grill avant de servir.</string>
+     </void>
+    </void>
+    <void property="imagePath">
+     <string>ressources\imageRecette\Brandade_de_morue.png</string>
+    </void>
+    <void property="listIngredient">
+     <void method="add">
+      <string>poivre</string>
+     </void>
+     <void method="add">
+      <string>sel</string>
+     </void>
+     <void method="add">
+      <string>ail</string>
+     </void>
+     <void method="add">
+      <string>huile d&apos;olive</string>
+     </void>
+     <void method="add">
+      <string>1 bouquet de persil non frisé</string>
+     </void>
+     <void method="add">
+      <string>500 g de pomme de terre</string>
+     </void>
+     <void method="add">
+      <string>500 g de morue salée (sous vide)</string>
+     </void>
+    </void>
+    <void property="tempsPreparation">
+     <string>35 min</string>
+    </void>
+    <void property="typeRC">
+     <string>Plat</string>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>Lasagnes à la bolognaise</string>
+   <object class="TAD.Recette" id="Recette2">
+    <void class="TAD.Recette" method="getField">
+     <string>nomRecette</string>
+     <void method="set">
+      <object idref="Recette2"/>
+      <string>Lasagnes à la bolognaise</string>
+     </void>
+    </void>
+    <void property="etapePreparation">
+     <void method="add">
+      <string>1. Faire revenir gousses hachées d&apos;ail et les oignons émincés dans un peu d&apos;huile d&apos;olive</string>
+     </void>
+     <void method="add">
+      <string>2. Ajouter la carotte et la branche de céleri hachée puis la viande et faire revenir le tout</string>
+     </void>
+     <void method="add">
+      <string>3. Au bout de quelques minutes, ajouter le vin rouge. Laisser cuire jusqu&apos;à évaporation</string>
+     </void>
+     <void method="add">
+      <string>4. Ajouter la purée de tomates, l&apos;eau et les herbes. Saler, poivrer, puis laisser mijoter à feu doux 45 minutes</string>
+     </void>
+     <void method="add">
+      <string>5. Préparer la béchamel : faire fondre le beurre</string>
+     </void>
+     <void method="add">
+      <string>6. Hors du feu, ajouter la farine d&apos;un coup</string>
+     </void>
+     <void method="add">
+      <string>7. Remettre sur le feu et remuer avec un fouet jusqu&apos;à l&apos;obtention d&apos;un mélange bien lisse</string>
+     </void>
+     <void method="add">
+      <string>8. Ajouter le lait peu à peu</string>
+     </void>
+     <void method="add">
+      <string>9. Remuer sans cesse, jusqu&apos;à ce que le mélange s&apos;épaississe</string>
+     </void>
+     <void method="add">
+      <string>10. Ensuite, parfumer avec la muscade, saler, poivrer. Laisser cuire environ 5 minutes, à feu très doux, en remuant. Réserver</string>
+     </void>
+     <void method="add">
+      <string>11. Préchauffer le four à 200°C (thermostat 6-7). Huiler le plat à lasagnes</string>
+     </void>
+     <void method="add">
+      <string>12. Poser une fine couche de béchamel puis des feuilles de lasagnes, de la bolognaise, de la béchamel et du parmesan</string>
+     </void>
+     <void method="add">
+      <string>13. Répéter l&apos;opération 3 fois de suite</string>
+     </void>
+     <void method="add">
+      <string>14. Sur la dernière couche de lasagnes, ne mettre que de la béchamel et recouvrir de fromage râpé. Parsemer quelques noisettes de beurre</string>
+     </void>
+     <void method="add">
+      <string>15. Enfourner pour environ 25 minutes de cuisson.</string>
+     </void>
+    </void>
+    <void property="imagePath">
+     <string>ressources\imageRecette\Lasagnes_à_la_bolognaise.png</string>
+    </void>
+    <void property="listIngredient">
+     <void method="add">
+      <string>poivre</string>
+     </void>
+     <void method="add">
+      <string>sel</string>
+     </void>
+     <void method="add">
+      <string>125 g de parmesan</string>
+     </void>
+     <void method="add">
+      <string>3 pincées de muscade râpée</string>
+     </void>
+     <void method="add">
+      <string>basilic</string>
+     </void>
+     <void method="add">
+      <string>thym</string>
+     </void>
+     <void method="add">
+      <string>20 cl de vin rouge</string>
+     </void>
+     <void method="add">
+      <string>15 cl d&apos;eau</string>
+     </void>
+     <void method="add">
+      <string>800 g de purée de tomate</string>
+     </void>
+     <void method="add">
+      <string>1 carotte</string>
+     </void>
+     <void method="add">
+      <string>1 branche de céleri</string>
+     </void>
+     <void method="add">
+      <string>2 gousses d&apos;ail</string>
+     </void>
+     <void method="add">
+      <string>1 paquet de lasagnes</string>
+     </void>
+     <void method="add">
+      <string>3 oignons jaunes</string>
+     </void>
+     <void method="add">
+      <string>600 g de boeuf haché</string>
+     </void>
+     <void method="add">
+      <string>2 feuilles de laurier</string>
+     </void>
+     <void method="add">
+      <string>70 g de fromage râpé</string>
+     </void>
+     <void method="add">
+      <string>1 l de lait</string>
+     </void>
+     <void method="add">
+      <string>100 g de farine</string>
+     </void>
+     <void method="add">
+      <string>125 g de beurre doux</string>
+     </void>
+    </void>
+    <void property="tempsPreparation">
+     <string>125 min</string>
+    </void>
+    <void property="typeRC">
+     <string>Plat</string>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>Tiramisu aux speculos</string>
+   <object class="TAD.Recette" id="Recette3">
+    <void class="TAD.Recette" method="getField">
+     <string>nomRecette</string>
+     <void method="set">
+      <object idref="Recette3"/>
+      <string>Tiramisu aux speculos</string>
+     </void>
+    </void>
+    <void property="etapePreparation">
+     <void method="add">
+      <string>1. Faire un ruban avec les jaunes d&apos;oeufs, le sucre et le sucre vanillé</string>
+     </void>
+     <void method="add">
+      <string>2. Y ajouter le mascarpone</string>
+     </void>
+     <void method="add">
+      <string>3. Battre les blancs en neige, les incorporer délicatement au mélange</string>
+     </void>
+     <void method="add">
+      <string>4. Ajouter l&apos;amaretto au café noir</string>
+     </void>
+     <void method="add">
+      <string>5. Monter le gâteau: tremper, au fur et à mesure, les speculoos dans le café</string>
+     </void>
+     <void method="add">
+      <string>6. Dans un plat, mettre une couche de biscuits, ensuite une couche de crème au mascarpone</string>
+     </void>
+     <void method="add">
+      <string>7. Ensuite une autre couche de biscuits, et terminer par une couche de crème</string>
+     </void>
+     <void method="add">
+      <string>8. Saupoudrer de cacao, couvrir d&apos;un film plastique et mettre au réfrigérateur quelques heures</string>
+     </void>
+    </void>
+    <void property="imagePath">
+     <string>ressources\imageRecette\Tiramisu_aux_speculos.png</string>
+    </void>
+    <void property="listIngredient">
+     <void method="add">
+      <string>30 g de cacao en poudre non sucré</string>
+     </void>
+     <void method="add">
+      <string>1 cuillère à soupe d&apos;amaretto</string>
+     </void>
+     <void method="add">
+      <string>300 g de spéculoos</string>
+     </void>
+     <void method="add">
+      <string>1 sachet de sucre vanillé</string>
+     </void>
+     <void method="add">
+      <string>80 g de sucre roux</string>
+     </void>
+     <void method="add">
+      <string>250 g de mascarpone</string>
+     </void>
+     <void method="add">
+      <string>3 oeufs</string>
+     </void>
+     <void method="add">
+      <string>2 tasses de café noir assez fort</string>
+     </void>
+    </void>
+    <void property="tempsPreparation">
+     <string>25 min</string>
+    </void>
+    <void property="typeRC">
+     <string>Dessert</string>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>Cake salé au jambon et aux olives</string>
+   <object class="TAD.Recette" id="Recette4">
+    <void class="TAD.Recette" method="getField">
+     <string>nomRecette</string>
+     <void method="set">
+      <object idref="Recette4"/>
       <string>Cake salé au jambon et aux olives</string>
      </void>
     </void>
@@ -72,19 +406,455 @@
    </object>
   </void>
   <void method="put">
-   <string>Bricks au thon faciles</string>
-   <object class="TAD.Recette" id="Recette1">
+   <string>Poulet basquaise</string>
+   <object class="TAD.Recette" id="Recette5">
     <void class="TAD.Recette" method="getField">
      <string>nomRecette</string>
      <void method="set">
-      <object idref="Recette1"/>
+      <object idref="Recette5"/>
+      <string>Poulet basquaise</string>
+     </void>
+    </void>
+    <void property="etapePreparation">
+     <void method="add">
+      <string>1. Hacher l&apos;oignon et l&apos;ail. Couper les tomates en morceaux et détailler les poivrons en lanières</string>
+     </void>
+     <void method="add">
+      <string>2. Faire chauffer 4 cuillères à soupe d&apos;huile dans une cocotte. Y faire dorer les oignons, l&apos;ail et les poivron. Laisser cuire 5 min</string>
+     </void>
+     <void method="add">
+      <string>3. Ajouter les tomates à la cocotte, saler, poivrer. Couvrir et laisser mijoter 20 min</string>
+     </void>
+     <void method="add">
+      <string>4. Dans une sauteuse, faire dorer dans l&apos;huile d&apos;olive les morceaux de poulet salés et poivrés</string>
+     </void>
+     <void method="add">
+      <string>5. Lorsqu&apos;ils sont dorés, les ajouter aux légumes, couvrir, ajouter le bouquet garni et le vin blanc et c&apos;est parti pour 35 min de cuisson.</string>
+     </void>
+    </void>
+    <void property="imagePath">
+     <string>ressources\imageRecette\Poulet_basquaise.png</string>
+    </void>
+    <void property="listIngredient">
+     <void method="add">
+      <string>poivre</string>
+     </void>
+     <void method="add">
+      <string>sel</string>
+     </void>
+     <void method="add">
+      <string>6 cuillères à soupe d&apos;huile d&apos;olive</string>
+     </void>
+     <void method="add">
+      <string>1 bouquet garni</string>
+     </void>
+     <void method="add">
+      <string>20 cl de vin blanc</string>
+     </void>
+     <void method="add">
+      <string>3 gousses d&apos;ail</string>
+     </void>
+     <void method="add">
+      <string>700 g de poivron (verts et rouges)</string>
+     </void>
+     <void method="add">
+      <string>1 kg de tomate</string>
+     </void>
+     <void method="add">
+      <string>1 poulet coupé en 6 morceaux</string>
+     </void>
+     <void method="add">
+      <string>3 oignons émincés</string>
+     </void>
+    </void>
+    <void property="tempsPreparation">
+     <string>80 min</string>
+    </void>
+    <void property="typeRC">
+     <string>Plat</string>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>Bricks au poulet et au curry</string>
+   <object class="TAD.Recette" id="Recette6">
+    <void class="TAD.Recette" method="getField">
+     <string>nomRecette</string>
+     <void method="set">
+      <object idref="Recette6"/>
+      <string>Bricks au poulet et au curry</string>
+     </void>
+    </void>
+    <void property="etapePreparation">
+     <void method="add">
+      <string>1. Couper les escalopes, la pomme et l&apos;échalote en tout petit morceau</string>
+     </void>
+     <void method="add">
+      <string>2. Faire mariner le poulet dans un bol avec l&apos;huile et le curry pendant 30 min</string>
+     </void>
+     <void method="add">
+      <string>3. Faire cuire le poulet à la poêle et ajouter en fin de cuisson la pomme, l&apos;échalote et la crème. Faire cuire 2-3 min à feu doux</string>
+     </void>
+     <void method="add">
+      <string>4. Préchauffer le four à 180°C (thermostat 6)</string>
+     </void>
+     <void method="add">
+      <string>5. Couper les feuilles de brick en 2, poser une cuillère à soupe de poulet sur un côté et plier la feuille de manière à former un triangle</string>
+     </void>
+     <void method="add">
+      <string>6. Disposer sur une plaque et mettre au four pendant 15-20 min, jusqu&apos;à ce que les triangles soient dorés.</string>
+     </void>
+    </void>
+    <void property="imagePath">
+     <string>ressources\imageRecette\Bricks_au_poulet_et_au_curry.png</string>
+    </void>
+    <void property="listIngredient">
+     <void method="add">
+      <string>3 cuillères à soupe d&apos;huile</string>
+     </void>
+     <void method="add">
+      <string>2 cuillères à soupe de curry en poudre</string>
+     </void>
+     <void method="add">
+      <string>1 pomme granny</string>
+     </void>
+     <void method="add">
+      <string>10 feuilles de brick</string>
+     </void>
+     <void method="add">
+      <string>3 escalopes de poulet</string>
+     </void>
+     <void method="add">
+      <string>1 échalote</string>
+     </void>
+     <void method="add">
+      <string>10 cl de crème liquide</string>
+     </void>
+    </void>
+    <void property="tempsPreparation">
+     <string>40 min</string>
+    </void>
+    <void property="typeRC">
+     <string>Plat</string>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>Fondant au chocolat</string>
+   <object class="TAD.Recette" id="Recette7">
+    <void class="TAD.Recette" method="getField">
+     <string>nomRecette</string>
+     <void method="set">
+      <object idref="Recette7"/>
+      <string>Fondant au chocolat</string>
+     </void>
+    </void>
+    <void property="etapePreparation">
+     <void method="add">
+      <string>1. Préchauffer le four à 180°C (thermostat 6). Faire fondre le chocolat et le beurre au bain-marie à feu doux.</string>
+     </void>
+     <void method="add">
+      <string>2. Pendant ce temps, séparer les jaunes des blancs d&apos;oeuf</string>
+     </void>
+     <void method="add">
+      <string>3. Monter les blancs en neige ferme. Réserver</string>
+     </void>
+     <void method="add">
+      <string>4. Quand le mélange chocolat-beurre est bien fondu, ajouter les jaunes d’oeufs et fouetter</string>
+     </void>
+     <void method="add">
+      <string>5. Incorporer le sucre et la farine, puis ajouter les blancs d’oeufs sans les casser</string>
+     </void>
+     <void method="add">
+      <string>6. Beurrer et fariner un moule à manqué et y verser la pâte à gâteau</string>
+     </void>
+     <void method="add">
+      <string>7. Enfourner pendant 20 minutes</string>
+     </void>
+     <void method="add">
+      <string>8. Quand le gâteau est cuit, le laisser refroidir avant de le démouler.</string>
+     </void>
+    </void>
+    <void property="imagePath">
+     <string>ressources\imageRecette\Fondant_au_chocolat.png</string>
+    </void>
+    <void property="listIngredient">
+     <void method="add">
+      <string>4 cuillères à soupe de farine</string>
+     </void>
+     <void method="add">
+      <string>100 g de sucre semoule</string>
+     </void>
+     <void method="add">
+      <string>200 g de chocolat pâtissier</string>
+     </void>
+     <void method="add">
+      <string>100 g de beurre doux</string>
+     </void>
+     <void method="add">
+      <string>5 oeufs</string>
+     </void>
+    </void>
+    <void property="tempsPreparation">
+     <string>35 min</string>
+    </void>
+    <void property="typeRC">
+     <string>Dessert</string>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>Pâte à crêpes simple</string>
+   <object class="TAD.Recette" id="Recette8">
+    <void class="TAD.Recette" method="getField">
+     <string>nomRecette</string>
+     <void method="set">
+      <object idref="Recette8"/>
+      <string>Pâte à crêpes simple</string>
+     </void>
+    </void>
+    <void property="etapePreparation">
+     <void method="add">
+      <string>1. Dans un saladier verser la moitié de la farine</string>
+     </void>
+     <void method="add">
+      <string>2. Rajouter les oeufs un à un</string>
+     </void>
+     <void method="add">
+      <string>3. Rajouter ensuite un peu de lait puis de la farine puis à nouveau du lait et ainsi de suite</string>
+     </void>
+     <void method="add">
+      <string>4. Enfin rajouter l&apos;huile et la bière</string>
+     </void>
+     <void method="add">
+      <string>5. Laisser reposer 1 heure, votre pâte est prête.</string>
+     </void>
+    </void>
+    <void property="imagePath">
+     <string>ressources\imageRecette\Pâte_à_crêpes_simple.png</string>
+    </void>
+    <void property="listIngredient">
+     <void method="add">
+      <string>1/2 verre de bière</string>
+     </void>
+     <void method="add">
+      <string>3 cuillères à soupe d&apos;huile</string>
+     </void>
+     <void method="add">
+      <string>1 l de lait demi-écrémé</string>
+     </void>
+     <void method="add">
+      <string>500 g de farine</string>
+     </void>
+     <void method="add">
+      <string>5 oeufs</string>
+     </void>
+    </void>
+    <void property="tempsPreparation">
+     <string>45 min</string>
+    </void>
+    <void property="typeRC">
+     <string>Dessert</string>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>Soufflé au fromage</string>
+   <object class="TAD.Recette" id="Recette9">
+    <void class="TAD.Recette" method="getField">
+     <string>nomRecette</string>
+     <void method="set">
+      <object idref="Recette9"/>
+      <string>Soufflé au fromage</string>
+     </void>
+    </void>
+    <void property="etapePreparation">
+     <void method="add">
+      <string>1. Préchauffer le four à 180°C (thermostat 6). Beurrer le moule</string>
+     </void>
+     <void method="add">
+      <string>2. Chauffer le beurre dans une casserole, ajouter la farine et remuer rapidement pendant 1 min. Ajouter le lait tiédi, remuer au fouet pendant quelques minutes à feu doux</string>
+     </void>
+     <void method="add">
+      <string>3. Retirer la casserole du feu</string>
+     </void>
+     <void method="add">
+      <string>4. Séparer les blancs et les battre fermement (avec une pincée de sel)</string>
+     </void>
+     <void method="add">
+      <string>5. Dans la casserole refroidie, ajouter les jaunes d&apos;oeufs un à un, puis le fromage râpé. Mettre une pincée de muscade, poivrer. Saler peu car le fromage contient déjà du sel</string>
+     </void>
+     <void method="add">
+      <string>6. Incorporer les blancs d&apos;oeufs battus en mélangeant délicatement</string>
+     </void>
+     <void method="add">
+      <string>7. Verser dans le moule, au maximum jusqu&apos;à 4 cm du bord</string>
+     </void>
+     <void method="add">
+      <string>8. Enfourner pendant 35 minutes en position chaleur tournante.</string>
+     </void>
+    </void>
+    <void property="imagePath">
+     <string>ressources\imageRecette\Soufflé_au_fromage.png</string>
+    </void>
+    <void property="listIngredient">
+     <void method="add">
+      <string>muscade</string>
+     </void>
+     <void method="add">
+      <string>40 cl de lait</string>
+     </void>
+     <void method="add">
+      <string>60 g de farine</string>
+     </void>
+     <void method="add">
+      <string>4 oeufs ou 5 moyens</string>
+     </void>
+     <void method="add">
+      <string>150 g d&apos;emmental ou gruyère râpé</string>
+     </void>
+     <void method="add">
+      <string>60 g de beurre</string>
+     </void>
+    </void>
+    <void property="tempsPreparation">
+     <string>50 min</string>
+    </void>
+    <void property="typeRC">
+     <string>Entrée</string>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>Flan de courgettes</string>
+   <object class="TAD.Recette" id="Recette10">
+    <void class="TAD.Recette" method="getField">
+     <string>nomRecette</string>
+     <void method="set">
+      <object idref="Recette10"/>
+      <string>Flan de courgettes</string>
+     </void>
+    </void>
+    <void property="etapePreparation">
+     <void method="add">
+      <string>1. Couper les courgettes en très fines rondelles</string>
+     </void>
+     <void method="add">
+      <string>2. Les faire revenir dans de l&apos;huile d&apos;olive</string>
+     </void>
+     <void method="add">
+      <string>3. Saler, poivrer, cuire environ 10 mm à petit feu</string>
+     </void>
+     <void method="add">
+      <string>4. Battre les oeufs et ajouter le fromage + sel + poivre + basilic + lait</string>
+     </void>
+     <void method="add">
+      <string>5. Jeter la préparation sur les courgettes. Remuer. NE PAS FAIRE PRENDRE &quot;L&apos;OMELETTE&quot;</string>
+     </void>
+     <void method="add">
+      <string>6. Mettre au four 180°C pendant 35 mn</string>
+     </void>
+     <void method="add">
+      <string>7. SERVIR FROID OU CHAUD avec une sauce mayonnaise + ketchup hot.</string>
+     </void>
+    </void>
+    <void property="imagePath">
+     <string>ressources\imageRecette\Flan_de_courgettes.png</string>
+    </void>
+    <void property="listIngredient">
+     <void method="add">
+      <string>20 feuilles de basilic</string>
+     </void>
+     <void method="add">
+      <string>8 cuillères de lait</string>
+     </void>
+     <void method="add">
+      <string>1 kg de courgette</string>
+     </void>
+     <void method="add">
+      <string>100 g de gruyère râpé (60 g de gruyère + 40 g de parmesan)</string>
+     </void>
+     <void method="add">
+      <string>6 oeufs</string>
+     </void>
+    </void>
+    <void property="tempsPreparation">
+     <string>50 min</string>
+    </void>
+    <void property="typeRC">
+     <string>Entrée</string>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>Flan coco</string>
+   <object class="TAD.Recette" id="Recette11">
+    <void class="TAD.Recette" method="getField">
+     <string>nomRecette</string>
+     <void method="set">
+      <object idref="Recette11"/>
+      <string>Flan coco</string>
+     </void>
+    </void>
+    <void property="etapePreparation">
+     <void method="add">
+      <string>1. Séparer les jaunes des blancs d&apos;oeufs. Verser le lait concentré sucré avec la même dose de lait écrémé</string>
+     </void>
+     <void method="add">
+      <string>2. Ajouter la noix de coco et mélanger le tout</string>
+     </void>
+     <void method="add">
+      <string>3. Monter les blancs en neige. Les mélanger délicatement avec la pâte</string>
+     </void>
+     <void method="add">
+      <string>4. Caraméliser le fond du moule</string>
+     </void>
+     <void method="add">
+      <string>5. Faire cuire au four au bain-marie à thermostat 7-8 pendant 45 minutes.</string>
+     </void>
+    </void>
+    <void property="imagePath">
+     <string>ressources\imageRecette\Flan_coco.png</string>
+    </void>
+    <void property="listIngredient">
+     <void method="add">
+      <string>400 g de lait concentré sucré</string>
+     </void>
+     <void method="add">
+      <string>125 g de noix de coco</string>
+     </void>
+     <void method="add">
+      <string>3 oeufs</string>
+     </void>
+     <void method="add">
+      <string>400 ml de lait écrémé</string>
+     </void>
+     <void method="add">
+      <string>caramel</string>
+     </void>
+    </void>
+    <void property="tempsPreparation">
+     <string>60 min</string>
+    </void>
+    <void property="typeRC">
+     <string>Dessert</string>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>Bricks au thon faciles</string>
+   <object class="TAD.Recette" id="Recette12">
+    <void class="TAD.Recette" method="getField">
+     <string>nomRecette</string>
+     <void method="set">
+      <object idref="Recette12"/>
       <string>Bricks au thon faciles</string>
      </void>
     </void>
     <void class="TAD.Recette" method="getField">
      <string>noteR</string>
      <void method="set">
-      <object idref="Recette1"/>
+      <object idref="Recette12"/>
       <string></string>
      </void>
     </void>
@@ -139,6 +909,76 @@
     </void>
     <void property="typeRC">
      <string>Entrée</string>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>Endives au jambon</string>
+   <object class="TAD.Recette" id="Recette13">
+    <void class="TAD.Recette" method="getField">
+     <string>nomRecette</string>
+     <void method="set">
+      <object idref="Recette13"/>
+      <string>Endives au jambon</string>
+     </void>
+    </void>
+    <void property="etapePreparation">
+     <void method="add">
+      <string>1. Cuire les endives à l&apos;eau bouillante pendant 45 min puis bien les égoutter</string>
+     </void>
+     <void method="add">
+      <string>2. Disposer les endives cuites sur les tranches de jambon puis rouler le tout</string>
+     </void>
+     <void method="add">
+      <string>3. Mettre les endives entourées de jambon dans un plat allant au four</string>
+     </void>
+     <void method="add">
+      <string>4. Faire une sauce Mornay en mélangeant le beurre, la farine, le lait et le fromage. Saler et poivrer</string>
+     </void>
+     <void method="add">
+      <string>5. Napper de sauce les endives au jambon et recouvrir de fromage râpé</string>
+     </void>
+     <void method="add">
+      <string>6. Gratiner pendant 10 à 15 min au four à 200°C (thermostat 6-7).</string>
+     </void>
+    </void>
+    <void property="imagePath">
+     <string>ressources\imageRecette\Endives_au_jambon.png</string>
+    </void>
+    <void property="listIngredient">
+     <void method="add">
+      <string>sel</string>
+     </void>
+     <void method="add">
+      <string>poivre</string>
+     </void>
+     <void method="add">
+      <string>30 cl de lait</string>
+     </void>
+     <void method="add">
+      <string>45 g de farine</string>
+     </void>
+     <void method="add">
+      <string>12 tranches de jambon</string>
+     </void>
+     <void method="add">
+      <string>2 kg d&apos;endive</string>
+     </void>
+     <void method="add">
+      <string>45 g de beurre</string>
+     </void>
+     <void method="add">
+      <string>75 g de crème</string>
+     </void>
+     <void method="add">
+      <string>60 g de gruyère râpé</string>
+     </void>
+    </void>
+    <void property="tempsPreparation">
+     <string>90 min</string>
+    </void>
+    <void property="typeRC">
+     <string>Plat</string>
     </void>
    </object>
   </void>

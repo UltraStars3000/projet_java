@@ -237,7 +237,7 @@
 						</AnchorPane>
 					</children>
 				</AnchorPane>
-				<Button fx:id="buttonAnnulerRecette" layoutX="586.0" layoutY="658.0" mnemonicParsing="false" onAction="#backToVueRecette" prefHeight="40.0" prefWidth="135.0" text="Annuler">
+				<Button fx:id="buttonAnnulerRecette" layoutX="586.0" layoutY="658.0" mnemonicParsing="false" onAction="#backToVueRecette" prefHeight="40.0" prefWidth="135.0" text="Quitter">
 					<font>
 						<Font name="System Bold" size="24.0" />
 					</font>

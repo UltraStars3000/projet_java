@@ -93,6 +93,14 @@ public class Controleur implements Initializable,Observer {
 	public void sceneAjouterRecette(ActionEvent e28) throws IOException {
 		PageAjouterRecette.setVisible(true);
 		menu.setVisible(false);
+		
+		//Reset des zones d'entrées lors de l'affichage de la scène
+		textAreaEtape.clear();
+		textAreaIngre.clear();
+		textFieldNomRecette.clear();
+		textFieldPrep.clear();
+		afficherPathImage.setText("");
+		categorieRecette.valueProperty().set(null);
 	}
 
 	
@@ -129,7 +137,6 @@ public class Controleur implements Initializable,Observer {
 		String pathImage = afficherPathImage.getText();
 		String typeR = categorieRecette.getValue();
 		
-		
 		//controle si le champ et vide ou non: sinon --> erreur
 		if(nomRecette.length()<=0) 
 		{
@@ -144,11 +151,12 @@ public class Controleur implements Initializable,Observer {
 		if (etape.length()<=0) {
 			throw new Exception("Etapes de preparation de la recette non données");
 		} 
-		if (typeR.length()<=0) {
+		if (typeR==null) {
 			throw new Exception("Catégorie manquante");
 		}
 		
-		
+		//Reset de la grille pour éviter un doublon des boutons
+		grilleRecette.getChildren().clear();
 		//System.out.println(nomRecette + preparation + ingredient + etape);
 		//ajout dans le dico
 		this.modl.ajouteRecette(nomRecette, preparation, ingredient, etape, pathImage, typeR);
