@@ -27,6 +27,7 @@ public class Recette implements Serializable {
 	public Recette() {
 		
 	}
+	
 	public Recette(String recette, String tempsPrep, ArrayList<String> ingredient, ArrayList<String> preparation, String pathImage, String typeR) {
 		this.nomRecette = recette;
 		this.tempsPreparation = tempsPrep;

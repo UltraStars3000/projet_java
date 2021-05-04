@@ -23,8 +23,11 @@ public class Modele extends Observable {
 	Recette r;
 	Path original;
 	private String[] typeUnite = {"g", "gramme", "litre", "c. à soupe", "cuillère à soupe", "c. à café", "cuillère à café", "pincée"};
+	
 	HashMap<String,Recette> listeRecettes = new HashMap<>();
 	HashMap<String,ArrayList<Recette>> triParCategorie = new HashMap<>();
+	
+	
 	File recetteXML = new File("recettes.xml");
 	ArrayList<Recette> listeEntree=new ArrayList<>();
 	ArrayList<Recette> listePlat=new ArrayList<>();
